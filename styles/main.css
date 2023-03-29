@@ -8,16 +8,21 @@ body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     color: white;
+    min-width: 370px;
 }
 
 .wrap {
-    width: 100%;
-/*    outline: 1px solid #ff6767;*/
+/*    outline: 13px solid #ff6767;*/
+/*    background-color: rgba(255, 0, 0, 0.06);*/
     padding: 70px 0;
+    max-width: 1301px;
+    margin: auto;
+    min-width: 370px;
 }
 
 .content {
-    width: 289px;
+    width: 90%;
+    min-width: 300px;
     height: 3380px;
 /*    outline: 1px solid;*/
     margin: auto;
