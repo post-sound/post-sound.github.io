@@ -226,7 +226,7 @@ body {
 .mSearchIcon {
     width: 50px;
     position: absolute;
-    right: 4px;
+    right: 3px;
     height: 50px;
 }
 
@@ -242,7 +242,7 @@ body {
 #mSearchI {
     height: 50px;
     fill: #4983E4;
-    width: 21px;
+    width: 23px;
 }
 
 .mLogo {
