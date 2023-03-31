@@ -112,8 +112,8 @@ body {
     height: 40px;
     background-color: #17171c;
     border-radius: 10px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
     padding: 0 -1px;
     position: sticky;
     top: 63px;
@@ -136,10 +136,11 @@ body {
     display: flex;
     justify-content: center;
 /*    position: relative;*/
+    height: 100%;
 }
 
 .fix {
-    height: 40px;
+    height: 100%;
     width: 50px;
     opacity: 0;
     display: none;
@@ -147,7 +148,8 @@ body {
 
 .tabsFlex {
     position: relative;
-    height: 40px;
+    height: 100%;
+/*    outline: 1px solid;*/
 }
 
 .tabs ul {
@@ -159,7 +161,7 @@ body {
 }
 
 .tabs ul li {
-    height: 40px;
+    height: 100%;
 /*    outline: 1px solid;*/
     padding: 0.8em 15px;
     cursor: pointer;
@@ -198,7 +200,7 @@ body {
 
 .mHeader {
     width: 100%;
-    height: 89px;
+    height: 77px;
     background-color: #17171c;
     position: fixed;
     top: 0;
@@ -228,10 +230,19 @@ body {
     height: 45px;
 }
 
-.mItem .search {
-    position: absolute;
-    top: 9px;
-    left: 6px;
+.mSearch {
+    width: 100%;
+    height: 100%;
+/*    outline: 1px solid;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mSearchI {
+    height: 21px;
+    fill: #4983E4;
+    width: 19px;
 }
 
 .mLogo {
@@ -246,7 +257,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 
@@ -259,12 +270,13 @@ body {
         top: 45px;
         left: 0;
         border-radius: 0;
-        height: 45px;
+        height: 34px;
         margin: 0;
         z-index: 4;
+/*        outline: 1px solid;*/
     }
     .tabs ul li {
-        padding: 0.9em 15px;
+        padding: 0.15em 15px;
     }
     .header {
         display: none;
@@ -272,9 +284,11 @@ body {
     .tabs {
         justify-content: flex-start;
     }
+/*
     .tabsFlex {
         height: 45px;
     }
+*/
     .fix {
         display: block;
     }

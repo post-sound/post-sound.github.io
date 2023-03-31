@@ -46,6 +46,9 @@
             -134 48 -140 51 -350 184 -110 70 -192 115 -224 124 -56 14 -56 14 -170 2z"/>
             </g>
         </symbol>
+        <symbol id="search" viewBox="0,0,256,256">
+            <g transform="scale(5.12,5.12)"><path d="M21,3c-9.39844,0 -17,7.60156 -17,17c0,9.39844 7.60156,17 17,17c3.35547,0 6.46094,-0.98437 9.09375,-2.65625l12.28125,12.28125l4.25,-4.25l-12.125,-12.09375c2.17969,-2.85937 3.5,-6.40234 3.5,-10.28125c0,-9.39844 -7.60156,-17 -17,-17zM21,7c7.19922,0 13,5.80078 13,13c0,7.19922 -5.80078,13 -13,13c-7.19922,0 -13,-5.80078 -13,-13c0,-7.19922 5.80078,-13 13,-13z"></path></g>
+        </symbol>
     </svg>
     <div class="header un-select">
         <div class="hWrap">
@@ -94,7 +97,11 @@
             <div class="mLogo mItem"></div>
             <div class="title mItem">Главная</div>
             <div class="mSearchIcon mItem">
-                <div class="search"></div>
+                <div class="mSearch">
+                    <svg id="mSearchI">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
