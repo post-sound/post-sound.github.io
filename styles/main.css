@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color: #17171c;
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -87,6 +87,7 @@ body {
     max-width: 1000px;
     margin: auto;
     min-width: 370px;
+    background-color: #000;
 }
 
 .content {
