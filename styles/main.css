@@ -112,17 +112,16 @@ body {
 }
 
 
-
-.tabWrap::-webkit-scrollbar {
-    height: 0;
-    width: 0;
-}
-
 .tabWrap {
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+.tabWrap::-webkit-scrollbar {
+    display: none;
+}
+
 
 .tabs {
     display: flex;
