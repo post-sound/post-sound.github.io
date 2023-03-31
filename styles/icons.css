@@ -34,11 +34,12 @@
 
 
 .bActive .icon svg {
-    fill: #c44848;
+    fill: #4983E4;
 }
 
 .bActive {
-    color: #c95858;
+/*    color: #c95858;*/
+    color: #4983E4;
 }
 
 
