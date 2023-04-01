@@ -6,7 +6,7 @@ function onResize() {
     let i = 0;
     while (i < pageItems.length) {
         let w = pageItems[i].clientWidth;
-        pageItems[i].style.height = `${w -20}px`;
+        pageItems[i].style.height = `${w - 10}px`;
         i++
     }
 }
