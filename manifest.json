@@ -1,0 +1,29 @@
+{
+  "name": "post-sound",
+  "description": "Post-sound. Share your music with the world",
+  "start_url": "/index.html",
+  "lang": "ru-RU",
+  "theme_color": "#17171c",
+  "display": "standalone",
+  "background_color": "#000",
+  "icons": [
+    {
+      "src": "maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+    {
+      "src": "maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screen.jpg",
+      "sizes": "750x1244",
+      "type": "image/jpeg"
+    }
+  ]
+}

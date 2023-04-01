@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>post-sound</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="manifest" href="/js13kpwa.webmanifest">
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="post-sound">
+    <meta name="apple-mobile-web-app-title" content="post-sound">
     <meta name="theme-color" content="#17171c">
+    <meta name="msapplication-navbutton-color" content="#17171c">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" type="image/png" sizes="512x512" href="icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="icon.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
@@ -155,5 +170,19 @@
     <script src="modules/tabs.js"></script>
     <script src="modules/btn.module.js"></script>
     <script src="modules/page.js"></script>
+    <script>
+    if (‘serviceWorker’ in navigator) {
+     window.addEventListener(‘load’, function() {  
+       navigator.serviceWorker.register(‘/sw.js’).then(
+         function(registration) {
+           // Registration was successful
+           console.log(‘ServiceWorker registration successful with scope: ‘, registration.scope); },
+         function(err) {
+           // registration failed :(
+           console.log(‘ServiceWorker registration failed: ‘, err);
+         });
+     });
+    }
+    </script>
 </body>
 </html>
