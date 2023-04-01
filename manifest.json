@@ -8,12 +8,12 @@
   "background_color": "#000",
   "icons": [
     {
-      "src": "maskable_icon.png",
+      "src": "icons/maskable_icon.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "maskable_icon.png",
+      "src": "icons/maskable_icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -21,7 +21,7 @@
   ],
   "screenshots": [
     {
-      "src": "screen.jpg",
+      "src": "icons/screen.jpg",
       "sizes": "750x1244",
       "type": "image/jpeg"
     }

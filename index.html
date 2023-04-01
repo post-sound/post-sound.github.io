@@ -17,8 +17,16 @@
     <meta name="msapplication-starturl" content="/index.html">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="icon" type="image/png" sizes="512x512" href="icon.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="icon.png">
+    <link href="splashes/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="splashes/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="splashes/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="splashes/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="splashes/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="splashes/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="splashes/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" /> 
+   
+    <link rel="icon" type="image/png" sizes="512x512" href="icons/icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="icons/icon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -170,18 +178,6 @@
     <script src="modules/tabs.js"></script>
     <script src="modules/btn.module.js"></script>
     <script src="modules/page.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js').then(function(registration) {
-              // Registration was successful
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
-              // registration failed :(
-              console.log('ServiceWorker registration failed: ', err);
-            });
-          });
-        }
-    </script>
+    <script src="service_worker/sw-reg.js"></script>
 </body>
 </html>
