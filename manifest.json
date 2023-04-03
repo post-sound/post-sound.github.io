@@ -1,7 +1,7 @@
 {
   "name": "post-sound",
   "description": "Post-sound. Share your music with the world",
-  "start_url": "/post-sound/index.html",
+  "start_url": "/index.html",
   "lang": "ru-RU",
   "theme_color": "#17171c",
   "display": "standalone",
