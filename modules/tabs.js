@@ -4,8 +4,13 @@ let line = document.querySelector('.line');
 
 function tabSwither(elem, className, line) {
     if (line != undefined) {
-        window.addEventListener('resize', resizes);
-        screen.orientation.addEventListener('change', resizes);
+        try {
+            window.addEventListener('resize', resizes);
+            screen.orientation.addEventListener('change', resizes);
+        } catch (err) {
+            alert(err);
+        }
+
     } 
     elem.addEventListener('click', function(e) {
         let vrk = e.target.tagName != 'LI' || e.target.classList.contains(className);
@@ -55,6 +60,9 @@ function tabSwither(elem, className, line) {
     }
 }
 
-tabSwither(bar, 'l-active');
-tabSwither(ul, 'active', line);
+window.addEventListener('load', event => {
+    tabSwither(bar, 'l-active');
+    tabSwither(ul, 'active', line);
+})
+
 
