@@ -243,7 +243,7 @@ body {
 }
 
 .line {
-    width: 31px;
+    width: 27px;
     height: 3px;
 /*    background-color: #ff5c5c;*/
     background-color: #4983E4;
@@ -379,25 +379,27 @@ body {
     .mHeader {
         display: block;
     }
+    .line {
+        width: 36px;
+        left: 12px;
+    }
     .tabWrap {
         position: fixed;
         top: 50px;
         left: 0;
         border-radius: 0;
-        height: 34px;
+        height: 38px;
         margin: 0;
         z-index: 4;
 /*        outline: 1px solid;*/
         padding: 0 0px;
     }
     .tabs ul li {
-        padding: 0.15em 15px;
+        padding: 0.2em 17px;
+        font-size: 15px;
     }
     .header {
         display: none;
-    }
-    .tabs {
-        justify-content: flex-start;
     }
     .fix {
         display: block;
