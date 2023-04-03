@@ -6,7 +6,9 @@ function tabSwither(elem, className, line) {
     if (line != undefined) {
         try {
             window.addEventListener('resize', resizes);
-            screen.orientation.addEventListener('change', resizes);
+            if (screen.orientation) {
+                screen.orientation.addEventListener('change', resizes);
+            }
         } catch (err) {
             alert(err);
         }
