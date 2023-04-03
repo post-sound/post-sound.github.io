@@ -6,6 +6,8 @@
     
     <link rel="manifest" href="manifest.json">
     
+    <meta name="mobile-web-app-capable" content="yes">
+    
     <link href="/splashes/apple_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
     <link href="/splashes/splash_2.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
     
@@ -19,9 +21,6 @@
     <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="/splashes/apple_splash_1668.png">
     <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="/splashes/apple_splash_2048.png">
 -->
-    
-    
-    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="post-sound">
     <meta name="apple-mobile-web-app-title" content="post-sound">
@@ -32,15 +31,6 @@
     <meta name="msapplication-starturl" content="/post-sound/index.html">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<!--
-    <link href="/splashes/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
-    <link href="/splashes/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
-    <link href="/splashes/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
-    <link href="/splashes/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
-    <link href="/splashes/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
-    <link href="/splashes/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
-    <link href="/splashes/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" /> 
--->
    
     <link rel="icon" type="image/png" sizes="512x512" href="icons/icon.png">
     <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="icons/icon.png">
@@ -90,44 +80,121 @@
         <symbol id="search" viewBox="0,0,256,256">
             <g transform="scale(5.12,5.12)"><path d="M21,3c-9.39844,0 -17,7.60156 -17,17c0,9.39844 7.60156,17 17,17c3.35547,0 6.46094,-0.98437 9.09375,-2.65625l12.28125,12.28125l4.25,-4.25l-12.125,-12.09375c2.17969,-2.85937 3.5,-6.40234 3.5,-10.28125c0,-9.39844 -7.60156,-17 -17,-17zM21,7c7.19922,0 13,5.80078 13,13c0,7.19922 -5.80078,13 -13,13c-7.19922,0 -13,-5.80078 -13,-13c0,-7.19922 5.80078,-13 13,-13z"></path></g>
         </symbol>
+        <symbol id="menu" viewBox="0 0 512.000000 512.000000">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+            <path d="M245 4471 c-90 -22 -173 -90 -215 -176 -34 -69 -35 -198 -2 -265 34
+            -71 75 -113 144 -151 l63 -34 2325 0 2325 0 51 27 c76 40 107 70 145 140 31
+            58 34 70 34 148 0 78 -3 90 -34 148 -37 69 -79 109 -151 144 l-45 23 -2305 2
+            c-1268 0 -2318 -2 -2335 -6z"/>
+            <path d="M245 2871 c-90 -22 -173 -90 -215 -176 -34 -69 -35 -198 -2 -265 34
+            -71 75 -113 144 -151 l63 -34 2325 0 2325 0 51 27 c76 40 107 70 145 140 31
+            58 34 70 34 148 0 78 -3 90 -34 148 -37 69 -79 109 -151 144 l-45 23 -2305 2
+            c-1268 0 -2318 -2 -2335 -6z"/>
+            <path d="M245 1271 c-90 -22 -173 -90 -215 -176 -34 -69 -35 -198 -2 -265 34
+            -71 75 -113 144 -151 l63 -34 2325 0 2325 0 51 27 c76 40 107 70 145 140 31
+            58 34 70 34 148 0 78 -3 90 -34 148 -37 69 -79 109 -151 144 l-45 23 -2305 2
+            c-1268 0 -2318 -2 -2335 -6z"/>
+            </g>
+        </symbol>
+        <symbol id="user" viewBox="0 0 512.000000 512.000000">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+            <path d="M2380 5114 c-19 -2 -78 -9 -130 -15 -430 -48 -872 -227 -1238 -501
+            -119 -89 -339 -302 -437 -423 -237 -292 -430 -685 -509 -1040 -49 -218 -60
+            -325 -60 -575 0 -250 11 -357 60 -575 79 -355 272 -749 509 -1040 92 -114 274
+            -294 387 -384 287 -229 675 -417 1023 -495 209 -47 334 -60 575 -60 425 0 751
+            75 1125 259 417 204 750 496 1010 885 153 228 300 569 359 835 49 218 60 325
+            60 575 0 250 -11 357 -60 575 -79 355 -272 749 -509 1040 -92 114 -274 294
+            -387 384 -348 278 -777 465 -1220 532 -126 19 -471 33 -558 23z m355 -779
+            c269 -57 492 -241 603 -497 46 -108 64 -203 64 -338 -1 -236 -88 -437 -261
+            -602 -92 -89 -191 -150 -304 -189 -515 -177 -1061 171 -1117 713 -44 427 242
+            822 661 913 85 18 267 18 354 0z m530 -2113 c259 -72 454 -235 564 -474 100
+            -215 105 -423 14 -556 -75 -109 -342 -287 -578 -385 -422 -174 -955 -178
+            -1385 -10 -235 92 -540 291 -607 396 -78 123 -82 284 -14 484 101 294 371 515
+            686 562 33 5 326 8 650 7 576 -2 592 -2 670 -24z"/>
+            </g>
+        </symbol>
+        <symbol id="lib" viewBox="0 0 512.000000 512.000000">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+            <path d="M2495 4481 c-52 -23 -95 -91 -95 -151 0 -20 302 -634 899 -1829 832
+            -1663 902 -1800 936 -1821 48 -30 121 -30 169 -1 39 25 76 91 76 139 0 22
+            -272 577 -899 1830 -717 1434 -905 1802 -928 1817 -31 21 -126 30 -158 16z"/>
+            <path d="M735 4466 c-37 -17 -70 -52 -84 -89 -8 -20 -11 -575 -11 -1818 0
+            -1977 -5 -1831 66 -1885 31 -24 47 -29 95 -29 62 0 94 17 133 69 l21 27 0
+            1819 0 1819 -21 27 c-11 15 -32 37 -46 47 -34 25 -113 32 -153 13z"/>
+            <path d="M1855 4466 c-41 -18 -83 -69 -90 -109 -3 -18 -4 -838 -3 -1824 l3
+            -1792 21 -27 c39 -53 71 -69 134 -69 63 0 95 16 134 69 l21 27 3 1806 c2 2008
+            8 1845 -65 1900 -41 31 -113 40 -158 19z"/>
+            </g>
+        </symbol>
+        <symbol id="arts" viewBox="0 0 512.000000 512.000000">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+            <path d="M1390 4260 c-233 -29 -452 -159 -586 -347 -170 -237 -208 -541 -103
+            -813 81 -211 277 -404 492 -485 153 -57 351 -69 507 -29 154 39 313 135 422
+            254 354 388 276 1000 -164 1287 -165 108 -376 157 -568 133z"/>
+            <path d="M3310 4260 c-233 -29 -452 -159 -586 -347 -170 -237 -208 -541 -103
+            -813 81 -211 277 -404 492 -485 153 -57 351 -69 507 -29 154 39 313 135 422
+            254 354 388 276 1000 -164 1287 -165 108 -376 157 -568 133z"/>
+            <path d="M1268 2339 c-554 -64 -985 -500 -1047 -1062 -14 -125 -14 -207 1
+            -265 16 -64 86 -134 150 -150 33 -9 210 -12 603 -12 525 0 556 1 551 18 -33
+            113 -39 192 -26 334 35 392 194 754 449 1020 24 26 43 50 40 52 -12 13 -203
+            56 -284 66 -106 12 -328 11 -437 -1z"/>
+            <path d="M3095 2344 c-376 -40 -700 -221 -921 -514 -152 -201 -254 -498 -254
+            -741 0 -91 36 -161 105 -204 l48 -30 1316 -3 c1487 -3 1388 -8 1459 73 56 64
+            67 114 53 252 -25 248 -104 457 -245 648 -189 255 -456 427 -774 496 -86 19
+            -135 21 -422 24 -179 1 -343 1 -365 -1z"/>
+            </g>
+        </symbol>
+        <symbol id="sort" viewBox="0 0 512.000000 512.000000">
+            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
+            <path d="M560 3824 c-78 -34 -130 -111 -130 -194 0 -88 38 -152 115 -193 l40
+            -22 1975 0 1975 0 45 25 c67 38 103 96 108 174 5 71 -14 120 -65 168 -65 62
+            88 58 -2065 58 -1731 -1 -1967 -3 -1998 -16z"/>
+            <path d="M539 2747 c-68 -36 -103 -93 -107 -175 -4 -83 21 -138 87 -186 l43
+            -31 1357 0 1358 0 39 27 c21 15 50 44 64 65 21 31 25 48 25 114 0 71 -3 81
+            -31 120 -18 24 -51 54 -75 66 l-42 23 -1337 0 -1337 0 -44 -23z"/>
+            <path d="M590 1701 c-104 -32 -160 -106 -160 -211 0 -84 53 -161 132 -194 33
+            -14 125 -16 720 -16 643 0 685 2 723 19 77 36 125 111 125 196 0 83 -39 148
+            -115 188 -40 22 -45 22 -720 24 -374 1 -691 -2 -705 -6z"/>
+            </g>
+        </symbol>
     </svg>
     <div class="header un-select">
         <div class="hWrap">
             <div class="hContent">
                 <div class="hMenu">
-                    <div class="logo">
-                        
-                    </div>
-                    <div class="bar">
+                    <div class="leftMenu">
                         <ul>
-                            <li class="barItem bActive btn">
-                                <div class="icon">
-                                    <svg>
-                                        <use xlink:href="#home"></use>
-                                    </svg>
-                                </div>
-                                Главная
+                            <li class="home-ico l-active">
+                                <svg>
+                                    <use xlink:href="#home"></use>
+                                </svg>
                             </li>
-                            <li class="barItem btn">
-                                <div class="icon" id="iMedia">
-                                    <svg>
-                                        <use xlink:href="#media"></use>
-                                    </svg>
-                                </div>
-                                Все композиции
+                            <li class="lib-ico">
+                                <svg>
+                                    <use xlink:href="#lib"></use>
+                                </svg>
                             </li>
-                            <li class="barItem btn">
-                                <div class="icon" id="iArt">
-                                    <svg>
-                                        <use xlink:href="#art"></use>
-                                    </svg>
-                                </div>
-                                Артисты
+                            <li class="arts-ico">
+                                <svg>
+                                    <use xlink:href="#arts"></use>
+                                </svg>
                             </li>
                         </ul>
                     </div>
-                    <div class="search">
+                    <div class="logo">
                         
+                    </div>
+                    <div class="rightMenu">
+                        <div class="searchBtn">
+                            <svg>
+                                <use xlink:href="#search"></use>
+                            </svg>
+                        </div>
+                        <div class="userBtn">
+                            <svg>
+                                <use xlink:href="#user"></use>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -152,6 +219,13 @@
         <div class="wrap">
             <div class="content">
                 <div class="tabWrap">
+                    <div class="sort-btn">
+                        <div class="sort-ico">
+                            <svg>
+                                <use xlink:href="#sort"></use>
+                            </svg>
+                        </div>
+                    </div>
                     <div class="tabs">
                        <div class="tabsFlex">
                            <div class="line"></div>
@@ -167,7 +241,6 @@
                     </div>
                 </div>
                 <div class="page">
-<!--                    <div class="test"></div>-->
                     <div class="test-block">splash test</div>
                     <div class="test-block"></div>
                     <div class="test-block"></div>

@@ -1,5 +1,5 @@
 let ul = document.querySelector('.tabs ul');
-let bar = document.querySelector('.bar ul')
+let bar = document.querySelector('.leftMenu ul')
 let line = document.querySelector('.line');
 
 
@@ -34,6 +34,6 @@ function tabSwither(elem, className, line) {
         e.target.classList.add(className);
     })
 }
-
+tabSwither(bar, 'l-active');
 tabSwither(ul, 'active', line);
-tabSwither(bar, 'bActive');
+
