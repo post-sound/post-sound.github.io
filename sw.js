@@ -1,2 +1,0 @@
-'use strict';
-importScripts('service_worker/sw-toolbox.js'); toolbox.precache(['/index.html','/styles/main.css']); toolbox.router.get('/*', toolbox.cacheFirst); toolbox.router.get('/*', toolbox.networkFirst, { networkTimeoutSeconds: 5});
