@@ -230,10 +230,10 @@ body {
 .tabs ul li {
     height: 100%;
 /*    outline: 1px solid;*/
-    padding: 0.8em 15px;
+    padding: 1.0em 15px;
     cursor: pointer;
     transition: .1s color;
-    font-size: 14px;
+    font-size: 12px;
     overflow: hidden;
 }
 
