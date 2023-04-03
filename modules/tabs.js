@@ -57,6 +57,7 @@ function tabSwither(elem, className, line) {
         function minimize() {
             let offsX = el.offsetLeft,
                 offsW = el.offsetWidth;
+            
             line.style.width = `${offsW - 24}px`;
             line.style.left = `${offsX + 12}px`;
         }
