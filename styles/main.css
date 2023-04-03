@@ -388,6 +388,7 @@ body {
         margin: 0;
         z-index: 4;
 /*        outline: 1px solid;*/
+        padding: 0 0px;
     }
     .tabs ul li {
         padding: 0.15em 15px;
@@ -398,21 +399,13 @@ body {
     .tabs {
         justify-content: flex-start;
     }
-/*
-    .tabsFlex {
-        height: 45px;
-    }
-*/
     .fix {
         display: block;
     }
     .page {
         display: flex;
     }
-}
-
-@media (max-width: 675px) {
-    .bar {
+    .sort-btn {
         display: none;
     }
 }
