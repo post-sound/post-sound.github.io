@@ -2,19 +2,12 @@ let ul = document.querySelector('.tabs ul');
 let bar = document.querySelector('.leftMenu ul')
 let line = document.querySelector('.line');
 
-
-const mediaQuery = window.matchMedia('(max-width: 489px)');
-
-
-
-
-
-
 function tabSwither(elem, className, line) {
-    window.addEventListener('resize', resizes);
-    window.addEventListener('deviceorientation', resizes);
+    if (line != undefined) {
+        window.addEventListener('resize', resizes);
+        screen.orientation.addEventListener('change', resizes);
+    } 
     elem.addEventListener('click', function(e) {
-        
         let vrk = e.target.tagName != 'LI' || e.target.classList.contains(className);
         if (vrk) return;
         
@@ -39,7 +32,6 @@ function tabSwither(elem, className, line) {
     })
     
     function resizes(e) {
-        if (line == undefined) return;
         let el = document.querySelector('.'+className);
         
         if (window.innerWidth <= 489) {
@@ -62,6 +54,7 @@ function tabSwither(elem, className, line) {
         }
     }
 }
+
 tabSwither(bar, 'l-active');
 tabSwither(ul, 'active', line);
 
