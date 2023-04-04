@@ -3,7 +3,7 @@
   "description": "Post-sound. Share your music with the world",
   "start_url": "/index.html",
   "lang": "ru-RU",
-  "theme_color": "#543739",
+  "theme_color": "#222222",
   "display": "standalone",
   "background_color": "#000",
   "icons": [
