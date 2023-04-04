@@ -36,9 +36,11 @@ function tabSwither(elem, className, line) {
         let i = 0;
         while (i < lis.length) {
             lis[i].classList.remove(className);
+            lis[i].style.opacity = null;
             i++
         }
         e.target.classList.add(className);
+        e.target.style.opacity = 1;
     })
     
     function resizes(e) {

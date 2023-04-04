@@ -7,6 +7,17 @@ html[data-dark] {
     --box-bg-blured: rgba(34, 34, 34, .84);
     --box-bg-classic: #17171c;
     --box-bg: var(--box-bg-blured);
+    --color: #ffffff;
+    --page-bg: #000;
+    --back-box: rgba(29, 29, 29, 0.38);
+}
+
+html[data-light] {
+    --box-bg-blured: rgba(255, 255, 255, 0.69);
+    --box-bg: var(--box-bg-blured);
+    --color: #000;
+    --page-bg: #dedede;
+    --back-box: rgba(255, 255, 255, 0.47);
 }
 
 .blur {
@@ -15,11 +26,11 @@ html[data-dark] {
 }
 
 body {
-    background-color: #000;
+    background-color: var(--page-bg);
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    color: white;
+    color: var(--color);
     min-width: 360px;
 }
 
@@ -81,7 +92,11 @@ body {
 }
 
 .lib-ico svg use {
-    fill: #fff;
+    fill: var(--color);
+}
+
+.lib-ico {
+    opacity: 1;
 }
 
 .l-active svg use {
@@ -89,10 +104,14 @@ body {
     transition: 0.1s all;
 }
 
+.leftMenu ul li {
+    opacity: 0.8;
+}
+
 .leftMenu ul li svg {
     width: 20px;
     height: 100%;
-    fill: #c4c4c4;
+    fill: var(--color);
     transition: 0.1s all;
 /*    outline: 1px solid;*/
     pointer-events: none;
@@ -132,7 +151,7 @@ body {
 }
 
 .rightMenu div svg {
-    fill: #ffffff;
+    fill: var(--color);
     width: 19px;
     height: 100%;
 }
@@ -170,7 +189,7 @@ body {
     padding: 0 8px;
     position: sticky;
     top: 63px;
-    color: #9a9696;
+/*    color: #9a9696;*/
 }
 
 .sort-btn {
@@ -194,7 +213,7 @@ body {
 }
 
 .sort-ico svg {
-    fill: #fff;
+    fill: var(--color);
     width: 19px;
     height: 100%;
 }
@@ -238,6 +257,12 @@ body {
     padding: 0;
 }
 
+.active {
+/*    color: #fc6666;*/
+    color: #4983E4;
+    opacity: 1;
+}
+
 .tabs ul li {
     height: 100%;
 /*    outline: 1px solid;*/
@@ -246,12 +271,10 @@ body {
     transition: .1s color;
     font-size: 12px;
     overflow: hidden;
+    opacity: 0.7;
 }
 
-.active {
-/*    color: #fc6666;*/
-    color: #4983E4;
-}
+
 
 .line {
     width: 27px;
@@ -355,6 +378,7 @@ body {
     align-items: center;
     font-size: 18px;
     margin-top: -5px;
+    font-weight: 500;
 }
 
 
@@ -369,21 +393,17 @@ body {
 .page div {
     border-radius: 11px;
     margin-bottom: 13px;
-    opacity: 0.6;
+    opacity: 1;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-.test {
-    height: 33px;
-    background-color: #17171c;
-}
 
 .test-block {
     width: calc(50% - 8px);
     height: 100px;
-    background-color: #17171c;
+    background-color: var(--back-box);
 }
 
 .foot-bar {
@@ -418,13 +438,14 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .fb-wrap ul li svg {
     pointer-events: none;
     width: 26px;
     height: 100%;
-    fill: #e8e8e8;
+    fill: var(--color);
     
 }
 
