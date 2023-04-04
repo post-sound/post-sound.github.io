@@ -38,14 +38,14 @@ if (html.hasAttribute('data-light')) {
     <link rel="apple-touch-startup-image" media="screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="splash_screens/10.9__iPad_Air_landscape.png">
     <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="splash_screens/12.9__iPad_Pro_landscape.png">
 
-    <meta name="theme-color" content="#1d1d1d">
-    <meta name="background-color" content="#000">
-    <meta name="msapplication-navbutton-color" content="#1d1d1d">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="background-color" content="#dedede">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 `);
     
     
-} else if (html.hasAttribut('light')) {
+} else if (html.hasAttribute('data-dark') {
     head.insertAdjacentHTML('beforeend', 
 `
     <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash_screens_d/iPhone_11_Pro_Max__iPhone_XS_Max_portrait.png">
@@ -83,9 +83,9 @@ if (html.hasAttribute('data-light')) {
     <link rel="apple-touch-startup-image" media="screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="splash_screens_d/10.9__iPad_Air_landscape.png">
     <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="splash_screens_d/12.9__iPad_Pro_landscape.png">
 
-    <meta name="theme-color" content="#ffffff">
-    <meta name="background-color" content="#dedede">
-    <meta name="msapplication-navbutton-color" content="#ffffff">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#1d1d1d">
+    <meta name="background-color" content="#000">
+    <meta name="msapplication-navbutton-color" content="#1d1d1d">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 `);
 }
