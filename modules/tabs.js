@@ -93,6 +93,7 @@ window.addEventListener('load', event => {
     tabSwither(bar, 'l-active');
     tabSwither(footBar, 'f-active');
     tabSwither(ul, 'active', line);
+    alert(navigator.userAgent);
 //    tabMove(ul, tabWrap, 'active');
 })
 
