@@ -1,6 +1,8 @@
 let ul = document.querySelector('.tabs ul');
-let bar = document.querySelector('.leftMenu ul')
+let bar = document.querySelector('.leftMenu ul');
 let line = document.querySelector('.line');
+let tabWrap = document.querySelector('.tabWrap');
+let footBar = document.querySelector('.foot-bar ul');
 
 function tabSwither(elem, className, line) {
     if (line != undefined) {
@@ -62,11 +64,36 @@ function tabSwither(elem, className, line) {
             line.style.left = `${offsX + 12}px`;
         }
     }
+    
+
 }
+
+//ul.addEventListener('click', move);
+//function move() {
+//    tabWrap.scrollLeft ;
+//}
+
+//function tabMove(elem, scrollBlock, className) {
+//    elem.addEventListener('click', e => {
+//        let vrk = e.target.tagName != 'LI';
+//        if (vrk) return;
+//        
+//        const render = () => {
+//            let pos = e.target.offsetLeft + (e.target.offsetWidth / 2);
+//            if (pos <= window.innerWidth / 2) return;
+//            scrollBlock.scrollLeft = pos - window.innerWidth / 2;
+//            requestAnimationFrame(render);
+//        }
+//        render();
+//        
+//    });
+//}
 
 window.addEventListener('load', event => {
     tabSwither(bar, 'l-active');
+    tabSwither(footBar, 'f-active');
     tabSwither(ul, 'active', line);
+//    tabMove(ul, tabWrap, 'active');
 })
 
 
