@@ -1,7 +1,7 @@
 const html = document.children[0],
       head = html.querySelector('head');
 if (html.hasAttribute('data-light')) {
-    head.insertAdjacentHTML('afterbegin', 
+    head.insertAdjacentHTML('beforeend', 
                             `
     <meta name="theme-color" content="#ffffff">
     <meta name="background-color" content="#dedede">
@@ -10,7 +10,7 @@ if (html.hasAttribute('data-light')) {
     `)}
 
 if (html.hasAttribute('data-dark')) {
-    head.insertAdjacentHTML('afterbegin', 
+    head.insertAdjacentHTML('beforeend', 
     `
     <meta name="theme-color" content="#1d1d1d">
     <meta name="background-color" content="#000">
