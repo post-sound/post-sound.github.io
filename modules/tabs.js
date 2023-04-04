@@ -112,7 +112,7 @@ if ( screen.width === 1125 && screen.height === 2436 ||
      screen.width === 1080 && screen.height === 2340 )
    {
      document.documentElement.classList.add("ios-iphonex");
-     alert('ты пидор');
+//     alert('ты пидор');
 }
 
 
