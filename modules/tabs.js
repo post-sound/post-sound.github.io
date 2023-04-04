@@ -93,8 +93,34 @@ window.addEventListener('load', event => {
     tabSwither(bar, 'l-active');
     tabSwither(footBar, 'f-active');
     tabSwither(ul, 'active', line);
-    alert(navigator.userAgent);
+//    alert(navigator.userAgent);
 //    tabMove(ul, tabWrap, 'active');
 })
+
+let ratio = window.devicePixelRatio || 1;
+let screen = {
+  width: window.screen.width * ratio,
+  height: window.screen.height * ratio
+};
+
+// iPhone 10—12
+if ( screen.width === 1125 && screen.height === 2436 ||
+     screen.width ===  828 && screen.height === 1792 ||
+     screen.width === 1242 && screen.height === 2688 ||
+     screen.width === 1170 && screen.height === 2532 ||
+     screen.width === 1284 && screen.height === 2778 ||
+     screen.width === 1080 && screen.height === 2340 )
+   {
+     document.documentElement.classList.add("ios-iphonex");
+     alert('ты пидор');
+}
+
+
+
+
+
+
+
+
 
 

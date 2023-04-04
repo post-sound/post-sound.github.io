@@ -443,6 +443,9 @@ body {
 
 
 @media (max-width: 489px) {
+    .ios-iphonex {
+        
+    }
     .content {
         width: 100%;
         padding: 0px 12px;
