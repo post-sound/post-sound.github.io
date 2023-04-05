@@ -310,6 +310,7 @@ body {
     display: none;
     align-items: flex-end;
     padding-bottom: 35px;
+    opacity: 0;
 }
 
 .mhWrap {
