@@ -549,6 +549,7 @@ body {
     }
     .page {
         display: flex;
+        justify-content: space-between;
         padding: 0;
         margin-top: 83px;
     }
@@ -560,6 +561,9 @@ body {
     }
     .black-fix {
         display: none;
+    }
+    .test-block {
+        width: calc(50% - 6px);
     }
 }
 
@@ -577,7 +581,8 @@ body {
 
 @media (min-width: 700px) {
     .test-block {
-        transform: scale(0.9)
+        transform: scale(0.9);
+        margin: 0;
     }
 }
 
