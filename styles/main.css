@@ -532,6 +532,7 @@ body {
         z-index: 4;
 /*        outline: 1px solid;*/
         padding: 0 0px;
+        width: 100%;
         background-color: transparent;
         -webkit-backdrop-filter: none;
         backdrop-filter: none;
