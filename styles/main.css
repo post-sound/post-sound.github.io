@@ -93,7 +93,7 @@ body {
     color: #ffffff;
 /*    height: 22px;*/
 /*    outline: 1px solid;*/
-    width: calc(100% - 33px);
+    width: 100%;
     font-size: 17px;
     position: relative;
     left: -6px;
