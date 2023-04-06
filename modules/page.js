@@ -9,6 +9,7 @@ function onResize() {
         pageItems[i].style.height = `${w - 10}px`;
         i++
     }
+    sInit();
 }
 
 window.onload = onResize;

@@ -229,7 +229,7 @@
             </div>
         </div>
     </div>
-    <div class="mHeader">
+    <div class="mHeader hideH">
         <div class="mhWrap">
             <div class="mLogo mItem">
                 <div class="mlogoSVG"></div>
@@ -244,11 +244,23 @@
             </div>
         </div>
     </div>
-<!--    <div class="status-bar"></div>-->
+    <div class="search-header">
+        <div class="input-wrapper">
+            <div class="s-input">
+                <div class="s-ico">
+                    <svg>
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </div>
+                <input id="searchInput" type="text" placeholder="Песня, артист, альбом...">
+            </div>
+            <div class="cancel-btn">Отмена</div>
+        </div>
+    </div>
     <div class="body">
         <div class="wrap">
             <div class="content">
-                <div class="tabWrap">
+                <div class="tabWrap hideH">
                     <div class="sort-btn">
                         <div class="sort-ico">
                             <svg>
@@ -289,6 +301,7 @@
                 </div>
             </div>
         </div>
+        <div class="search-list"></div>
     </div>
     <div class="foot-bar">
         <div class="fb-wrap">
@@ -316,6 +329,7 @@
             </ul>
         </div>
     </div>
+    <script src="modules/search-ui.js"></script>
     <script src="modules/tabs.js"></script>
     <script src="modules/btn.module.js"></script>
     <script src="modules/page.js"></script>
