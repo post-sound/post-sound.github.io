@@ -96,7 +96,7 @@ body {
     width: calc(100% - 33px);
     font-size: 17px;
     position: relative;
-    left: -4px;
+    left: -6px;
     top: 1px;
     padding-right: 10px;
 }
