@@ -102,7 +102,7 @@ body {
 }
 
 .s-ico {
-    width: 33px;
+    width: 0px;
     height: 100%;
     display: none;
     justify-content: center;
@@ -114,6 +114,7 @@ body {
     fill: #9b9b9b;
     width: 58%;
     height: 100%;
+    display: none;
 }
 
 .cancel-btn {
