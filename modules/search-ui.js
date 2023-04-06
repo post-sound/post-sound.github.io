@@ -23,7 +23,7 @@ function sInit() {
     let top = wrapBox.offsetHeight,
         h = window.innerHeight;
 //    console.log(s);
-    searchBox.style.marginTop = '-' + (top + 120) + 'px';
+    searchBox.style.marginTop = '-' + (top + 'px';
     searchBox.style.height = (h + 121) + 'px';
 }
 
@@ -36,7 +36,7 @@ one.addEventListener('click', () => {
 
 off.addEventListener('click', () => {
     input.value = '';
-    searchBox.style.marginTop = '-' + (wrapBox.offsetHeight + 120) + 'px';
+    searchBox.style.marginTop = '-' + wrapBox.offsetHeight + 'px';
     document.body.classList.remove('search-active')
 })
 
