@@ -35,6 +35,7 @@ one.addEventListener('click', () => {
 })
 
 off.addEventListener('click', () => {
+    input.value = '';
     searchBox.style.marginTop = '-' + (wrapBox.offsetHeight + 120) + 'px';
     document.body.classList.remove('search-active')
 })
