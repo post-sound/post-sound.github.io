@@ -16,7 +16,7 @@ function getBodyScrollTop() {
         i++
     }
     let addH = Number(res);
-    searchBox.style.marginTop = 70 + addH + s + 'px';
+    searchBox.style.marginTop = 68 + addH + s + 'px';
 }
 
 function sInit() {
