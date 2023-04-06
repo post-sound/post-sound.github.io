@@ -23,7 +23,7 @@ function sInit() {
     let top = wrapBox.offsetHeight,
         h = window.innerHeight;
 //    console.log(s);
-    searchBox.style.marginTop = '-' + (top + 'px';
+    searchBox.style.marginTop = '-' + top + 'px';
     searchBox.style.height = (h + 121) + 'px';
 }
 
