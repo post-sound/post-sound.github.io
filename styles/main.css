@@ -101,7 +101,7 @@ body {
 }
 
 .s-ico {
-    width: 30px;
+    width: 40px;
     height: 100%;
 /*    display: none;*/
     justify-content: center;
@@ -110,7 +110,7 @@ body {
 }
 
 .s-ico svg {
-    fill: #606060;
+    fill: #7b7b7b;
     width: 58%;
     height: 100%;
 /*    display: none;*/
