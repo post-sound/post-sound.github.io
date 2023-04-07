@@ -16,6 +16,12 @@ input.onkeydown = (e) => {
     }
 }
 
+searchBox.addEventListener('touchmove', (e) => {
+    if (e.target == searchBox) {
+        e.preventDefault();
+    }
+})
+
 function getBodyScrollTop() {
     let s = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop,
         h = searchBox.style.marginTop;
@@ -49,7 +55,13 @@ one.addEventListener('click', () => {
 
 off.addEventListener('click', () => {
     input.value = '';
-//    searchBox.style.marginTop = '-' + wrapBox.offsetHeight + 'px';
-    document.body.classList.remove('search-active')
+    document.body.classList.remove('search-active');
+})
+
+searchBox.addEventListener('click', (e) => {
+    if (e.target == searchBox) {
+        input.value = '';
+        document.body.classList.remove('search-active');
+    }
 })
 
