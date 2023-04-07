@@ -33,6 +33,17 @@ body {
     min-width: 360px;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
+
+html {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .black-fix {
     width: 100%;
     height: 9px;
