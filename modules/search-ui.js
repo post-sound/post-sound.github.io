@@ -3,7 +3,8 @@ const searchBox = document.querySelector('.search-list'),
       one = document.querySelector('.mSearchIcon'),
       off = document.querySelector('.cancel-btn'),
       input = document.querySelector('#searchInput'),
-      clearBtn = document.querySelector('.clear-btn');
+      clearBtn = document.querySelector('.clear-btn'),
+      searchHead = document.querySelector('.search-header');
 
 clearBtn.addEventListener('click', () => {
     input.value = '';
@@ -20,6 +21,9 @@ searchBox.addEventListener('touchmove', (e) => {
     if (e.target == searchBox) {
         e.preventDefault();
     }
+})
+searchHead.addEventListener('touchmove', (e) => {
+    e.preventDefault();
 })
 
 function getBodyScrollTop() {
