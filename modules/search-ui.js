@@ -11,7 +11,7 @@ clearBtn.addEventListener('click', () => {
 })
 
 input.onkeydown = (e) => {
-    if (e.code == 'Enter') {
+    if (e.key == 'Enter') {
         input.blur();
     }
 }
