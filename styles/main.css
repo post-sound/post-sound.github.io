@@ -103,7 +103,7 @@ body {
 .s-ico {
     width: 40px;
     height: 100%;
-/*    display: none;*/
+    display: flex;
     justify-content: center;
     
 /*    outline: 1px solid;*/
