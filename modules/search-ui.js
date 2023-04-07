@@ -2,7 +2,13 @@ const searchBox = document.querySelector('.search-list'),
       wrapBox = document.querySelector('.wrap'),
       one = document.querySelector('.mSearchIcon'),
       off = document.querySelector('.cancel-btn'),
-      input = document.querySelector('#searchInput');
+      input = document.querySelector('#searchInput'),
+      clearBtn = document.querySelector('.clear-btn');
+
+clearBtn.addEventListener('click', () => {
+    input.value = '';
+    input.focus();
+})
 
 function getBodyScrollTop() {
     let s = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop,
@@ -15,15 +21,16 @@ function getBodyScrollTop() {
         }
         i++
     }
-    let addH = Number(res);
-    searchBox.style.marginTop = 68 + addH + s + 'px';
+//    let addH = Number(res);
+//    searchBox.style.marginTop = 68 + addH + s + 'px';
+    searchBox.style.top = 68 + 'px';
 }
 
 function sInit() {
     let top = wrapBox.offsetHeight,
         h = window.innerHeight;
 //    console.log(s);
-    searchBox.style.marginTop = '-' + top + 'px';
+//    searchBox.style.marginTop = '-' + top + 'px';
     searchBox.style.height = (h + 121) + 'px';
 }
 
@@ -36,7 +43,7 @@ one.addEventListener('click', () => {
 
 off.addEventListener('click', () => {
     input.value = '';
-    searchBox.style.marginTop = '-' + wrapBox.offsetHeight + 'px';
+//    searchBox.style.marginTop = '-' + wrapBox.offsetHeight + 'px';
     document.body.classList.remove('search-active')
 })
 
