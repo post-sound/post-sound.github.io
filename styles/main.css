@@ -33,7 +33,7 @@ body {
     min-width: 360px;
 }
 
-html::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
 }
 
