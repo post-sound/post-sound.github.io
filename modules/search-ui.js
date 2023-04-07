@@ -10,6 +10,12 @@ clearBtn.addEventListener('click', () => {
     input.focus();
 })
 
+input.onkeydown = (e) => {
+    if (e.code == 'Enter') {
+        input.blur();
+    }
+}
+
 function getBodyScrollTop() {
     let s = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop,
         h = searchBox.style.marginTop;
