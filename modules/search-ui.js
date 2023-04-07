@@ -22,7 +22,7 @@ searchBox.addEventListener('touchmove', (e) => {
         e.preventDefault();
     }
 })
-searchHead.addEventListener('touchmove', (e) => {
+searchHead.addEventListener('scroll', (e) => {
     e.preventDefault();
 })
 
