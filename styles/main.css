@@ -557,6 +557,7 @@ body {
 }
 
 
+
 .page {
     width: 100%;
     margin-top: 92px;
@@ -568,13 +569,30 @@ body {
     margin-bottom: 100px;
 }
 
+
+
 .page div {
     border-radius: 11px;
 /*    margin-bottom: 13px;*/
-    opacity: 1;
+/*    opacity: 1;*/
     overflow: hidden;
+    opacity: 1;
+    pointer-events: auto;
 }
 
+.hide-page .page div {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hide-page .loader {
+    opacity: 1;
+}
 
 .test-block {
     width: calc(50% - 10px);
@@ -692,7 +710,6 @@ body {
         display: block;
     }
     .page {
-        display: flex;
         justify-content: space-between;
         padding: 0;
         margin-top: 83px;
