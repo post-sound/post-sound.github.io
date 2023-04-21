@@ -9,9 +9,9 @@ function onResize() {
         pageItems[i].style.height = `${w - 10}px`;
         i++
     }
-    setTimeout(() => {
-        document.body.classList.remove('hide-page');
-    }, 1300)
+//    setTimeout(() => {
+//        document.body.classList.remove('hide-page');
+//    }, 1300)
     sInit();
 }
 
