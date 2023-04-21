@@ -10,7 +10,7 @@ function onResize() {
         i++
     }
 //    setTimeout(() => {
-//        document.body.classList.remove('hide-page');
+        document.body.classList.remove('hide-page');
 //    }, 1300)
     sInit();
 }
