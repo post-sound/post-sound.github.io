@@ -537,13 +537,17 @@ body {
 
 .mlogoSVG {
     width: 43px;
-    height: 100%;
-    background-image: url(../icons/favicon.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 98%;
 /*    outline: 1px solid;*/
     margin-left: 7px;
+}
+
+.mlogoSVG svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+/*    outline: 1px solid red;*/
+    fill: #fff;
 }
 
 .title {
