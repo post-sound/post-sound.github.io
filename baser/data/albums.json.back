@@ -1,0 +1,35 @@
+[
+    {
+        "id": 0,
+        "title": "ensom",
+        "artist": "kalandra",
+        "type": "ep",
+        "date": "2021",
+        "list": [
+            {
+                "index": 0,
+                "title": "wonderland",
+                "duration": 308.6116780045351
+            },
+            {
+                "index": 1,
+                "title": "brave new world",
+                "duration": 239.59501133786847
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "title": "illenium",
+        "artist": "sleepwalker",
+        "type": "single",
+        "date": "2016",
+        "list": [
+            {
+                "index": 0,
+                "title": "illenium",
+                "duration": 250.19886621315192
+            }
+        ]
+    }
+]

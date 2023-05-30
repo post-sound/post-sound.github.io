@@ -1,0 +1,277 @@
+.album-input {
+/*    outline: 1px solid;*/
+/*    width: 132px;*/
+/*    height: 100%;*/
+/*    outline: 1px solid;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+    display: flex;
+}
+
+.cover-prew {
+    width: 132px;
+    height: 130px;
+    background-color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+/*
+.cover-prew:focus {
+    border: 1px solid var(--active)
+}
+*/
+
+.cover-prew .pulse {
+    background-color: rgb(36, 36, 36);
+}
+
+.cover-change {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.pic-ico {
+    width: 100%;
+    height: 31px;
+    position: absolute;
+    top: 33px;
+}
+
+.pic-ico svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--active);
+}
+
+.change-text {
+/*    outline: 1px solid;*/
+    width: 100px;
+    text-align: center;
+    height: 29px;
+    position: absolute;
+    bottom: 27px;
+    color: var(--active);
+    font-size: 12px;
+}
+
+.changed {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.changed .cover-change {
+    display: none;
+}
+
+.changed .prew-image {
+    display: block;
+}
+
+.prew-image {
+    width: 100%;
+    height: 100%;
+/*    outline: 1px solid;*/
+    position: absolute;
+    display: none;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../session_temp/prewCover.jpg);
+}
+
+.file-data {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.53);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+/*    justify-content: center;*/
+    padding: 1px 6px;
+    align-items: center;
+
+}
+.file-data span {
+    font-size: 9px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.cancel {
+    background-color: rgba(41, 41, 41, 0.67);
+    margin-right: 11px;
+    padding: 7px 15px;
+    position: relative;
+}
+
+
+.textInpBox {
+    width: 100%;
+    height: 130px;
+    padding: 4px 0px 0px 16px;
+}
+
+.textInpBox div {
+    margin-bottom: 14px;
+}
+
+.date-type {
+    display: flex;
+}
+
+.dateInp {
+    width: 120px;
+    margin-right: 15px;
+}
+
+.typeInp {
+    width: 180px;
+}
+
+.list-box {
+    width: 100%;
+    height: 247px;
+    background-color: rgba(0, 0, 0, 0.19);
+    margin-top: 23px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.add-box {
+/*    outline: 1px solid;*/
+    justify-content: space-between;
+    padding: 0 9px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+.track-index {
+/*    outline: 1px solid;*/
+    width: 21px;
+    text-align: end;
+    margin-right: 7px;
+/*    color: var(--active);*/
+    color: #696363;
+    font-size: 15px;
+    padding-top: 1px;
+}
+
+.trackFileInp {
+    position: relative;
+    border-radius: 28px;
+    margin-left: 4px;
+    height: 31px;
+    padding-left: 18px;
+    padding-top: 7px;
+    width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.trackNameInp input {
+    border-radius: 23px;
+    padding-top: 1px;
+    padding-left: 17px;
+}
+
+.trackNameInp {
+    width: 228px;
+}
+
+.addTrackBt {
+/*    outline: 1px solid;*/
+    width: 31px;
+    height: 31px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(85, 85, 85, 0.31);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.addTrackBt svg {
+    width: 13px;
+    height: 25px;
+    fill: var(--active);
+}
+
+
+
+
+
+.tempTrackItem {
+/*    outline: 1px solid;*/
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 12px;
+    align-items: center;
+}
+
+.tempTrackItem div {
+/*    outline: 1px solid;*/
+    padding: 4px 6px;
+/*    background-color: #141414;*/
+    border-radius: 17px;
+}
+
+.temp-track-title {
+    width: 197px;
+    color: #9a9a9a;
+/*    padding-left: 14px;*/
+/*    font-size: 11px;*/
+}
+
+
+.temp-track-file {
+    width: 199px;
+    color: #656565;
+}
+
+.delete-temp-item {
+    width: 27px;
+    display: flex;
+    justify-content: center;
+    color: var(--active);
+/*    background-color: #1a1a1a;*/
+    cursor: pointer;
+    user-select: none;
+}
+
+.temp-track-index {
+    width: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--active);
+    height: 22px;
+}
+
+.tempTrackList {
+    overflow-y: scroll;
+    height: 204px;
+}
+
+.tempTrackList {
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.tempTrackList::-webkit-scrollbar {
+    display: none;
+}
+

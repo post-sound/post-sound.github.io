@@ -1,0 +1,155 @@
+html {
+    --box-bg-blured: rgba(28, 28, 28, 0.79);
+    --box-bg-classic: #17171c;
+    --box-bg: var(--box-bg-blured);
+    --color: #ffffff;
+    --page-bg: #000;
+    --back-box: rgba(29, 29, 29, 0.38);
+    --active: #0763ff;
+}
+
+.box {
+    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
+    background-color: var(--box-bg);
+    border-radius: 15px;
+}
+
+.btn1 {
+    background-color: var(--active);
+    color: #000000;
+    border-radius: 15px;
+    padding: 8px 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn1:focus {
+    border: 1px solid rgba(255, 255, 255, 0.49)
+}
+
+.btn2 {
+    background-color: var(--box-bg);
+    color: var(--active);
+    border-radius: 15px;
+    padding: 8px 20px;
+    font-size: 13px;
+    text-transform: capitalize;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+/*    position: relative;*/
+}
+
+.pulse {
+    border-radius: 50%;
+    animation: pulse 0.5s ease-out;
+    transform: scale(0);
+    position: absolute;
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(2);
+        background-color: rgba(0, 0, 0, 0.77);
+        opacity: 0;
+    }
+}
+
+.btn3 {
+    padding: 2px 4px;
+    font-size: 12px;
+    color: #b2b2b2;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn3:active {
+    color: #d4d4d4;
+}
+
+
+.delimiter {
+    height: 1px;
+    background-color: rgba(46, 46, 46, 0.49);
+    width: 99.4%;
+    margin: 22px auto;
+}
+
+.textInp {
+    height: 31px;
+    position: relative;
+    user-select: none;
+}
+
+.input-changed .clearInp {
+    display: flex;
+}
+
+.textInp input {
+    background-color: transparent;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 10px;
+    background-color: rgba(126, 126, 126, 0.12);
+}
+
+.textInp input:focus {
+    outline: none;
+}
+
+.textInp input::placeholder {
+    color: rgb(159, 159, 159);
+}
+
+.input-changed input {
+    padding-right: 26px;
+}
+
+
+.clearInp {
+    position: absolute;
+    width: 21px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    padding-right: 5px;
+    display: none;
+}
+
+.clearInp svg {
+    width: 22px;
+    height: 100%;
+    fill: #656565;
+    margin-top: -1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

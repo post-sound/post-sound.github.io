@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baser</title>
+    <meta name="version" content="0.2 dev">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="modules/ui-kit/classes.css">
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <svg display="none">
+        <symbol id="note" viewBox='0 0 90.000000 90.000000'>
+            <g transform='translate(0.000000,90.000000) scale(0.100000,-0.100000)'
+            fill='#2e2e2e' stroke='none'><path d='M540 814 c-58 -13 -115 -26 -127 -29 -21 -5 -22 -9 -25 -195 -3 -216
+            -3 -216 -84 -229 -87 -13 -124 -54 -124 -136 0 -85 50 -135 135 -135 54 0 95
+            21 119 60 13 24 16 62 16 239 0 210 0 211 23 216 12 3 63 14 112 25 50 11 100
+            22 113 25 21 5 22 10 22 95 l0 90 -37 -1 c-21 0 -85 -11 -143 -25z'/></g>
+        </symbol>
+        <symbol id="upload" viewBox="0 0 24 24">
+            <path d="M8.71,7.71,11,5.41V15a1,1,0,0,0,2,0V5.41l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-4-4a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-4,4A1,1,0,1,0,8.71,7.71ZM21,14a1,1,0,0,0-1,1v4a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V15a1,1,0,0,0-2,0v4a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V15A1,1,0,0,0,21,14Z"></path>
+        </symbol>
+        <symbol id="pic" viewBox="0 0 491.29 460.78">
+            <path d="M471.14,64.34c0,110.89,0,221.77,0,332.66c-0.26,0.68-0.62,1.34-0.75,2.04c-4.73,25.59-24.92,42.78-50.91,42.79
+            c-115.72,0.07-231.43,0.08-347.15,0c-29.53-0.02-51.73-22.32-51.75-51.87c-0.07-106.18-0.07-212.36,0.09-318.55
+            c0.01-5.9,0.98-12.07,2.86-17.66c7.2-21.42,26.5-34.27,50.54-34.28c108.24-0.01,216.47-0.01,324.71,0c7.63,0,15.27-0.29,22.88,0.1
+            c19.94,1.04,34.83,10.46,43.95,28.22C468.25,52.9,469.34,58.8,471.14,64.34z M249.24,394.7c51.03,0,102.06,0.02,153.08-0.03
+            c5.74-0.01,11.91,0.08,15.01-6.01c3.06-6.03-0.5-11.05-3.78-15.76c-17.1-24.52-34.28-48.99-51.46-73.46c-1.34-1.91-2.8-3.8-4.48-5.4
+            c-7.47-7.11-18.49-7.5-26.29-0.38c-7.68,7.01-14.72,14.71-22.2,21.96c-8.95,8.68-20.09,9.51-28.89,2.16
+            c-2.22-1.86-4.1-4.19-5.88-6.5c-20.42-26.64-40.78-53.33-61.19-79.98c-7.76-10.12-15.3-20.43-23.56-30.13
+            c-7.11-8.36-16.76-7.17-22.72,2.04c-0.87,1.35-1.65,2.77-2.38,4.2c-27.53,54.5-55.05,109-82.52,163.53
+            c-1.24,2.46-2.31,5.1-2.93,7.77c-1.59,6.87,1.69,12.81,8.45,14.72c3.45,0.98,7.21,1.2,10.83,1.2
+            C148.65,394.72,198.94,394.7,249.24,394.7z M361.13,144.72c0.1-27.08-21.95-49.32-49.02-49.45c-26.97-0.13-49.32,22.05-49.44,49.08
+            c-0.12,27.03,21.99,49.29,49.07,49.37C338.88,193.81,361.04,171.83,361.13,144.72z"/>
+        </symbol>
+        <symbol id="clp" viewBox="0 0 47 22">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 10.3731L38.7325 5.62073C40.0465 5.19685 41.4554 5.91846 41.8793 7.2325C42.3032 8.54653 41.5815 9.95539 40.2675 10.3793L24 15.6269L7.7325 10.3793C6.41846 9.95539 5.69685 8.54653 6.12073 7.2325C6.54461 5.91846 7.95347 5.19685 9.26751 5.62073L24 10.3731Z"/>
+        </symbol>
+        <symbol id="cls" viewBox="0 0 61 61">
+    <path d="M30.4,61C13.6,61,0,47.3,0,30.4C0,13.6,13.7,0,30.6,0C47.5,0,61.1,13.7,61,30.6C61,47.4,47.3,61,30.4,61z
+	 M30.5,34.8c3,3,5.8,5.8,8.6,8.6c1.4-1.4,2.9-2.9,4.4-4.4c-2.8-2.8-5.7-5.7-8.7-8.7c2.9-2.9,5.8-5.7,8.5-8.5
+	C42,20.5,40.5,19,39,17.5c-2.8,2.8-5.7,5.7-8.7,8.7c-2.9-2.9-5.7-5.7-8.5-8.5c-1.4,1.4-2.8,2.8-4.3,4.3c2.8,2.8,5.6,5.6,8.6,8.5
+	c-2.9,2.9-5.8,5.7-8.5,8.5c1.4,1.5,2.9,2.9,4.3,4.4C24.7,40.6,27.6,37.8,30.5,34.8z"/>
+        </symbol>
+        <symbol id="plus" viewBox="0 0 61 61">
+<path d="M59.9,31.1c-0.3,0.5-0.5,1-0.9,1.5c-0.6,0.7-1.5,0.9-2.4,0.9c-7.4,0-14.9,0-22.3,0c-0.2,0-0.5,0-0.8,0c0,0.3,0,0.5,0,0.8
+	c0,7.3,0,14.6,0,22c0,1.8-0.6,3.1-2.4,3.7c-0.4,0-0.8,0-1.1,0c0,0-0.1-0.1-0.1-0.1c-1.6-0.6-2.3-1.5-2.3-3.2c0-7.4,0-14.9,0-22.3
+	c0-0.2,0-0.5,0-0.8c-0.3,0-0.5,0-0.8,0c-7.5,0-14.9,0-22.4,0c-1.7,0-2.8-0.9-3.2-2.3c-0.4-1.6,0.7-3.2,2.3-3.5
+	c0.3-0.1,0.7-0.1,1-0.1c7.4,0,14.8,0,22.2,0c0.2,0,0.5,0,0.8,0c0-0.3,0-0.6,0-0.8c0-7.5,0-14.9,0-22.4c0-1.7,0.9-2.9,2.4-3.2
+	c1.6-0.3,3.2,0.7,3.4,2.3c0.1,0.4,0.1,0.7,0.1,1.1c0,7.4,0,14.7,0,22.1c0,0.2,0,0.5,0,0.8c0.3,0,0.5,0,0.8,0c7.3,0,14.6,0,21.9,0
+	c1.8,0,3.1,0.6,3.7,2.4C59.9,30.3,59.9,30.7,59.9,31.1z"/>
+        </symbol>
+        <symbol id="arrow-up" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.78761 16.6778C4.37555 17.0695 3.72017 17.0695 3.30809 16.6779C2.90582 16.2955 2.89623 15.6663 3.28668 15.2724C3.29372 15.2654 5.69535 12.9823 10.4916 8.42313L11.9821 7L13.4794 8.41624L20.6911 15.2779C21.0945 15.6613 21.104 16.2922 20.7125 16.6871C20.2782 17.1007 19.6211 17.1008 19.208 16.7081L11.9819 9.83964L4.78761 16.6778Z"/>
+            <mask id="mask0_0_2885" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="3" y="7" width="18" height="10">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.78761 16.6778C4.37555 17.0695 3.72017 17.0695 3.30809 16.6779C2.90582 16.2955 2.89623 15.6663 3.28668 15.2724C3.29372 15.2654 5.69535 12.9823 10.4916 8.42313L11.9821 7L13.4794 8.41624L20.6911 15.2779C21.0945 15.6613 21.104 16.2922 20.7125 16.6871C20.2782 17.1007 19.6211 17.1008 19.208 16.7081L11.9819 9.83964L4.78761 16.6778Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_0_2885)">
+            </g>
+        </symbol>
+        <symbol id="clear" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM8.71486 9.75227C8.42838 9.4658 8.42838 9.00133 8.71486 8.71486C9.00133 8.42838 9.4658 8.42838 9.75227 8.71486L12 10.9626L14.2477 8.71486C14.5342 8.42838 14.9987 8.42838 15.2851 8.71486C15.5716 9.00133 15.5716 9.4658 15.2851 9.75227L13.0374 12L15.2851 14.2477C15.5716 14.5342 15.5716 14.9987 15.2851 15.2851C14.9987 15.5716 14.5342 15.5716 14.2477 15.2851L12 13.0374L9.75227 15.2851C9.4658 15.5716 9.00133 15.5716 8.71486 15.2851C8.42838 14.9987 8.42838 14.5342 8.71486 14.2477L10.9626 12L8.71486 9.75227Z"/>
+        </symbol>
+    </svg>
+    <div class="app">
+        <div class="wrapper">
+            <div class="header">
+                <div>
+                    <p>baser</p>
+                </div>
+                <div class="logo">
+                    
+                </div>
+                <div>
+                    <p>v0.2 dev</p>
+                </div>
+            </div>
+            <div class="main-form box">
+                    <div class="form-box">
+                        <div class="album-input">
+                            <div title="Выберите файл..." class="cover-prew pulsed" tabindex="1">
+                                <div class="cover-change">
+                                    <div class="pic-ico">
+                                        <svg>
+                                            <use xlink:href="#pic"></use>
+                                        </svg>
+                                    </div>
+                                    <div class="change-text">Загрузить обложку</div>
+                                </div>
+                                <div class="prew-image">
+                                    <div class="file-data">
+                                        <span>...</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="textInpBox">
+                                <div class="titleInp textInp" data-ph="Название альбома / сингла / EP..." data-inp-id="titleAlbInp"></div>
+                                <div class="artistInp textInp" data-ph="Исполнитель..." data-inp-id="artInp"></div>
+                                <div class="date-type">
+                                    <div class="dateInp textInp" data-ph="Год релиза..." data-inp-id="dateInp"></div>
+                                    <div class="typeInp textInp" data-ph="Тип (Album/EP/Single)..." data-inp-id="typeInp"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-box">
+                            <div class="add-box">
+<!--                                <div class="track-index">1</div>-->
+                                <div class="trackNameInp textInp" data-ph="Название композиции" data-inp-id="trackNameInp"></div>
+                                <div class="trackFileInp btn2" tabindex="1">выберите файл</div>
+                                <div class="addTrackBt pulsed" tabindex="1">
+                                    <svg>
+                                        <use xlink:href="#plus"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="tempTrackList">
+<!--
+                                <div class="tempTrackItem">
+                                    <div class="temp-track-index">1</div>
+                                    <div class="temp-track-title">Окна</div>
+                                    <div class="temp-track-file">asdasd</div>
+                                    <div class="delete-temp-item">x</div>
+                                </div>
+-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delimiter"></div>
+                    <div class="btns-box">
+                        <div class="clear-form btn3">Сбросить</div>
+                        <div class="cancel btn2" tabindex="1">Отменить</div>
+                        <div class="push-form btn1" tabindex="1">Добавить</div>
+                    </div>
+                <div class="expandArea">
+                    <div class="exp-ico">
+                        <svg>
+                            <use xlink:href="#arrow-up"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="delimiter"></div>
+            <div class="browser">
+                <div class="swither">
+                    <div class="left-nav">
+                        <div class="nav-tabs box">
+                            <ul id="sf">
+                                <li class="active-tab">Albums</li>
+                                <li>Audio</li>
+                            </ul>
+                            <div class="line"></div>
+                        </div>
+                        <div class="addElementBtn pulsed">
+                            <svg>
+                                <use xlink:href="#plus"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="right-nav">
+                        <div class="edit-code btn2">browse code</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cancelArea"></div>
+    </div>
+    <script src="modules/ui-kit/btn.js"></script>
+    <script src="modules/hotKeys.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="modules/form.js"></script>
+    <script src="modules/main.js"></script>
+    <script src="modules/reader.js"></script>
+    <script src="modules/tabs.js"></script>
+</body>
+</html>
