@@ -1,6 +1,6 @@
 let data
 
-getFile('./data/albums.json')
+
 
 function loadContent() {
     

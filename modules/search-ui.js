@@ -1,3 +1,5 @@
+getFile('./baser/data/albums.json')
+
 const searchBox = document.querySelector('.search-list'),
       wrapBox = document.querySelector('.wrap'),
       one = document.querySelector('.mSearchIcon'),

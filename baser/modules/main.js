@@ -1,3 +1,5 @@
+getFile('./data/albums.json')
+
 const openFormBtn = document.querySelector('.addElementBtn')
 const formBlock = document.querySelector('.main-form')
 const cancelArea = document.querySelector('.cancelArea')
