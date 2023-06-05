@@ -52,8 +52,9 @@ def saveImage(fileName, title):
 @eel.expose
 def saveAudio(fileName, title):
     src = tempPath + 'audio/' + fileName
-    duration = audio.save(src, title)
-    return duration
+    fileData = audio.save(src, title, fileName)
+    returnData = [fileData[0], fileData[1]]
+    return returnData
 
 @eel.expose
 def removeFile(fileName):

@@ -10,7 +10,7 @@ const pushFormBtn = document.querySelector('.push-form')
 const inputs = document.querySelectorAll('.textInp input')
 const trackInp = document.querySelector('#trackNameInp')
 
-let savedFiles = {images: [], audio: []}
+let savedFiles = {images: [], audio: [], indexes: []}
 let formData = {}
 let trackData = []
 let trackItems = []
@@ -43,6 +43,8 @@ pushFormBtn.addEventListener('click', e => {
 
 function pushForm() {
     console.log('Обработка формы начата...')
+    pushFormBtn.setAttribute('disabled', '')
+//    savedFiles = {images: [], audio: []}
     
     pushData = {
         id: data.length,
@@ -52,6 +54,8 @@ function pushForm() {
         date: formData.dateInp,
         list: []
     }
+    
+    savedFiles.indexes[savedFiles.indexes.length] = data.length - 1
     
     let titleCover = `${formData.artInp}-${formData.titleAlbInp}-${formData.dateInp}`
     eel.saveImage(formData.coverSrc, `${titleCover}.jpg`)(() => {
@@ -64,41 +68,44 @@ function pushForm() {
     while (i < trackData.length) {
         let arrLength = pushData.list.length,
             dur = 0,
-            title = trackData[i].title,
-            loadEnd = new Event('loadEnd')
+            title = trackData[i].title
+//            loadEnd = new Event('loadEnd')
         
         let titleAudio = `${formData.artInp}-${title}-${formData.dateInp}`
-        eel.saveAudio(trackData[i].src, `${titleAudio}.mp3`)(duration => {
+        eel.saveAudio(trackData[i].src, titleAudio)(returnData => {
             
             let arrLength = savedFiles.audio.length
-            savedFiles.audio[arrLength] = `${titleAudio}.jpg`
+            savedFiles.audio[arrLength] = titleAudio + returnData[1]
             
-            pushData.list[arrLength] = {
-                index: arrLength,
+            pushData.list[pushData.list.length] = {
+                index: pushData.list.length,
                 title: title,
-                duration: duration
+                duration: returnData[0]
             }
             
-            console.log(`${titleAudio}.mp3 saved`)
-            if (pushData.list.length === trackData.length) document.dispatchEvent(loadEnd)
+            console.log(`${titleAudio + returnData[1]} saved`)
+            console.log(pushData.list.length + " из " + trackData.length)
+            if (pushData.list.length === trackData.length) loadEnded()
         })
         i++
     }
     
-    document.addEventListener('loadEnd', () => {
-        console.log('Файлы обработаны и сохранены')
-        newGlobalData = data
-        newGlobalData[newGlobalData.length] = pushData
-        eel.jsonWriter(JSON.stringify(newGlobalData, null, 2))(() => {
-            getFile('./data/albums.json')
-            clearForm(false)
-            pushData = {}
-            console.log('JSON Обновлен')
-        })
-    })
+
 }
 
-
+function loadEnded() {
+    console.log('Файлы обработаны и сохранены')
+    newGlobalData = data
+    newGlobalData[newGlobalData.length] = pushData
+    eel.jsonWriter(JSON.stringify(newGlobalData, null, 2))(() => {
+        getFile('./data/albums.json')
+        clearForm(false)
+        pushData = {}
+        newGlobalData = null
+        console.log('JSON Обновлен')
+        pushFormBtn.removeAttribute('disabled')
+    })
+}
 
 function addTrack() {
     let isName = formData.trackNameInp == undefined || formData.trackNameInp == '' || formData.trackNameInp == '_NULL_'
@@ -138,7 +145,7 @@ function renderTracks() {
 function clearTracksBox() {
     let i = 0
     while (i < trackItems.length) {
-        console.log(trackItems[i])
+//        console.log(trackItems[i])
         trackItems[i].remove()
         i++
     }
@@ -207,7 +214,6 @@ function clearForm(is) {
     clearTracksBox()
     formData = {}
     trackData = []
-    savedFiles = {images: [], audio: []}
     eel.resetForm()()
     return true
 }
@@ -234,7 +240,25 @@ function fileSelect(fileName) {
 }
 
 
-
+function removeChange() {
+    let i = 0
+    while (i < savedFiles.images.length) {
+        eel.removeFile('./data/cover/1000/' + savedFiles.images[i])
+        eel.removeFile('./data/cover/350/' + savedFiles.images[i])
+        eel.removeFile('./data/cover/60/' + savedFiles.images[i])
+        i++
+    }
+    let e = 0
+    while (e < savedFiles.audio.length) {
+        eel.removeFile('./data/audio/' + savedFiles.audio[e])
+        e++
+    }
+    data.splice(savedFiles.indexes[0] + 1, savedFiles.indexes.length)
+    eel.jsonWriter(JSON.stringify(data, null, 2))(() => {
+        console.log(data)
+        savedFiles = {images: [], audio: [], indexes: []}
+    })
+}
 
 
 
