@@ -63,7 +63,8 @@ function pushForm() {
     eel.saveImage(formData.coverSrc, `${titleCover}.jpg`)(() => {
         let arrLength = savedFiles.images.length
         savedFiles.images[arrLength] = `${titleCover}.jpg`
-        console.log(`${titleCover}.jpg saved (1000, 350, 60)`)
+//        console.log(`${titleCover}.jpg saved (1000, 350, 60)`)
+        statusUpdate(`${titleCover}.jpg saved (1000, 350, 60)`)
     })
     
     let i = 0
@@ -268,15 +269,17 @@ function removeChange() {
     }
     data.splice(savedFiles.indexes[0] + 1, savedFiles.indexes.length)
     eel.jsonWriter(JSON.stringify(data, null, 2))(() => {
-        console.log(data)
+        console.log('%cИзменения текущего сеанса отменены', 'color: #1bdd1b')
         savedFiles = {images: [], audio: [], indexes: []}
+        return data
     })
 }
 
 
 function statusUpdate(status) {
     document.querySelector('.status-load').innerHTML = status
-    console.log(status)
+    let date = new Date()
+    console.log(`[${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] %c${status}`, 'color: #1bdd1b')
 }
 
 
