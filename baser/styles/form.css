@@ -248,6 +248,7 @@
 /*    background-color: #1a1a1a;*/
     cursor: pointer;
     user-select: none;
+    padding: 0;
 }
 
 .temp-track-index {
@@ -259,6 +260,21 @@
     color: var(--active);
     height: 22px;
 }
+
+.delete-temp-ico {
+    width: 30px;
+    position: relative;
+    height: 30px;
+}
+.delete-temp-ico svg {
+    position: absolute;
+    width: 170%;
+    height: 150%;
+    left: -1px;
+    top: -8px;
+    fill: #8d2f2f;
+}
+
 
 .tempTrackList {
     overflow-y: scroll;
@@ -275,3 +291,29 @@
     display: none;
 }
 
+.loader-box {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(28, 28, 28, 0.92);
+    top: 0;
+    left: 0;
+/*    backdrop-filter: blur(55px) saturate(60%) brightness(5%) contrast(91%);*/
+}
+
+.loader {
+    position: absolute;
+    left: calc(50% - 24px);
+    top: 200px;
+}
+
+.status-load {
+    width: 100%;
+/*    outline: 1px solid;*/
+    position: absolute;
+    text-align: center;
+    top: 278px;
+    font-size: 14px;
+    color: var(--active);
+}

@@ -42,8 +42,10 @@ pushFormBtn.addEventListener('click', e => {
 })
 
 function pushForm() {
-    console.log('Обработка формы начата...')
-    pushFormBtn.setAttribute('disabled', '')
+    statusUpdate('Обработка формы...')
+//    pushFormBtn.setAttribute('disabled', '')
+    disabledOn();
+    document.querySelector('.loader-box').style.display = 'block';
 //    savedFiles = {images: [], audio: []}
     
     pushData = {
@@ -83,8 +85,9 @@ function pushForm() {
                 duration: returnData[0]
             }
             
-            console.log(`${titleAudio + returnData[1]} saved`)
-            console.log(pushData.list.length + " из " + trackData.length)
+//            console.log(`${titleAudio + returnData[1]} saved`)
+//            console.log(pushData.list.length + " из " + trackData.length)
+            statusUpdate(`${titleAudio + returnData[1]} saved   [${pushData.list.length} из ${trackData.length}]`)
             if (pushData.list.length === trackData.length) loadEnded()
         })
         i++
@@ -94,7 +97,8 @@ function pushForm() {
 }
 
 function loadEnded() {
-    console.log('Файлы обработаны и сохранены')
+//    console.log('Файлы обработаны и сохранены')
+    statusUpdate('Обновление JSON...')
     newGlobalData = data
     newGlobalData[newGlobalData.length] = pushData
     eel.jsonWriter(JSON.stringify(newGlobalData, null, 2))(() => {
@@ -102,8 +106,11 @@ function loadEnded() {
         clearForm(false)
         pushData = {}
         newGlobalData = null
-        console.log('JSON Обновлен')
-        pushFormBtn.removeAttribute('disabled')
+//        console.log('JSON Обновлен')
+        statusUpdate('Успешно добавлено')
+//        pushFormBtn.removeAttribute('disabled')
+        disabledOff()
+        document.querySelector('.loader-box').style.display = 'none';
     })
 }
 
@@ -136,7 +143,13 @@ function renderTracks() {
         <div class="temp-track-index">${trackData[trackData.length - 1].index + 1}</div>
         <div class="temp-track-title">${trackData[trackData.length - 1].title}</div>
         <div class="temp-track-file">${trackData[trackData.length - 1].src}</div>
-        <div class="delete-temp-item">x</div>
+        <div class="delete-temp-item">
+            <div class="delete-temp-ico">
+                <svg>
+                    <use xlink:href="#clear"></use>
+                </svg>
+            </div>
+        </div>
     `)
     trackItems[trackItems.length] = elem
     tempTrackListBox.appendChild(elem)
@@ -261,7 +274,10 @@ function removeChange() {
 }
 
 
-
+function statusUpdate(status) {
+    document.querySelector('.status-load').innerHTML = status
+    console.log(status)
+}
 
 
 

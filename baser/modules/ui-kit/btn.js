@@ -46,7 +46,7 @@ function textInp(className) {
         clearBt.classList.add('clearInp')
         clearBt.insertAdjacentHTML('beforeend', `
             <svg>
-                <use xlink:href="#clear"><use>
+                <use xlink:href="#clear"></use>
             <svg>
         `)
         input.addEventListener('input', e => {
