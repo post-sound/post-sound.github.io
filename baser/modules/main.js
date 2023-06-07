@@ -23,10 +23,10 @@ let expanded = false
 let closed = true
 
 
-function clpForm(e) {
+function clpForm() {
     if (closed) return
     if (!expanded) {
-        expForm(e)
+        expForm()
         return
     }
     disabledOn()
@@ -46,7 +46,7 @@ function expForm(e) {
     closed = false
 }
 
-function closeForm(e) {
+function closeForm() {
     if (!clearForm(true)) return
     disabledOn()
     formBlock.style.bottom = '-605px'

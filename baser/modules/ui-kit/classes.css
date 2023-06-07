@@ -1,11 +1,15 @@
 html {
-    --box-bg-blured: rgba(28, 28, 28, 0.79);
+    --box-bg-blured: rgba(34, 34, 34, 0.79);
     --box-bg-classic: #17171c;
     --box-bg: var(--box-bg-blured);
     --color: #ffffff;
     --page-bg: #000;
     --back-box: rgba(29, 29, 29, 0.38);
     --active: #0763ff;
+}
+
+a {
+    color: var(--active);
 }
 
 .box {

@@ -43,11 +43,8 @@ pushFormBtn.addEventListener('click', e => {
 
 function pushForm() {
     statusUpdate('Обработка формы...')
-//    pushFormBtn.setAttribute('disabled', '')
     disabledOn();
     document.querySelector('.loader-box').style.display = 'block';
-//    savedFiles = {images: [], audio: []}
-    
     pushData = {
         id: data.length,
         title: formData.titleAlbInp,
@@ -63,7 +60,6 @@ function pushForm() {
     eel.saveImage(formData.coverSrc, `${titleCover}.jpg`)(() => {
         let arrLength = savedFiles.images.length
         savedFiles.images[arrLength] = `${titleCover}.jpg`
-//        console.log(`${titleCover}.jpg saved (1000, 350, 60)`)
         statusUpdate(`${titleCover}.jpg saved (1000, 350, 60)`)
     })
     
@@ -85,9 +81,6 @@ function pushForm() {
                 title: title,
                 duration: returnData[0]
             }
-            
-//            console.log(`${titleAudio + returnData[1]} saved`)
-//            console.log(pushData.list.length + " из " + trackData.length)
             statusUpdate(`${titleAudio + returnData[1]} saved   [${pushData.list.length} из ${trackData.length}]`)
             if (pushData.list.length === trackData.length) loadEnded()
         })
@@ -98,7 +91,6 @@ function pushForm() {
 }
 
 function loadEnded() {
-//    console.log('Файлы обработаны и сохранены')
     statusUpdate('Обновление JSON...')
     newGlobalData = data
     newGlobalData[newGlobalData.length] = pushData
@@ -107,11 +99,11 @@ function loadEnded() {
         clearForm(false)
         pushData = {}
         newGlobalData = null
-//        console.log('JSON Обновлен')
         statusUpdate('Успешно добавлено')
-//        pushFormBtn.removeAttribute('disabled')
         disabledOff()
         document.querySelector('.loader-box').style.display = 'none';
+        renderTableItem(data[data.length - 1])
+        clpForm()
     })
 }
 
@@ -271,7 +263,8 @@ function removeChange() {
     eel.jsonWriter(JSON.stringify(data, null, 2))(() => {
         console.log('%cИзменения текущего сеанса отменены', 'color: #1bdd1b')
         savedFiles = {images: [], audio: [], indexes: []}
-        return data
+        clearItems()
+        render()
     })
 }
 

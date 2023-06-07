@@ -17,5 +17,5 @@ function getFile(path) {
 
 function parse(obj) {
     data = JSON.parse(obj)
-    loadContent()
+    render()
 }
