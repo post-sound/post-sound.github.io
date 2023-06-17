@@ -131,11 +131,15 @@ function addTrack() {
 
 function renderTracks() {
     let elem = document.createElement('div')
+    let trackIndex = trackData.length - 1
+    
     elem.classList.add('tempTrackItem')
+    elem.setAttribute('data-index', trackIndex)
+    
     elem.insertAdjacentHTML('beforeend', `
-        <div class="temp-track-index">${trackData[trackData.length - 1].index + 1}</div>
-        <div class="temp-track-title">${trackData[trackData.length - 1].title}</div>
-        <div class="temp-track-file">${trackData[trackData.length - 1].src}</div>
+        <div class="temp-track-index">${trackIndex + 1}</div>
+        <div class="temp-track-title">${trackData[trackIndex].title}</div>
+        <div class="temp-track-file">${trackData[trackIndex].src}</div>
         <div class="delete-temp-item">
             <div class="delete-temp-ico">
                 <svg>
@@ -144,8 +148,27 @@ function renderTracks() {
             </div>
         </div>
     `)
+    
+    elem.querySelector('.delete-temp-item').onclick = () => {
+        removeTrack(elem.getAttribute('data-index'))
+    }
+    
     trackItems[trackItems.length] = elem
     tempTrackListBox.appendChild(elem)
+}
+
+function removeTrack(trackIndex) {
+    trackItems[trackIndex].remove()
+    trackItems.splice(trackIndex, 1)
+    trackData.splice(trackIndex, 1)
+    
+    let i = 0
+    while (i < trackData.length) {
+        trackData[i].index = i
+        trackItems[i].setAttribute('data-index', i)
+        trackItems[i].querySelector('.temp-track-index').innerHTML = i + 1
+        i++
+    }
 }
 
 function clearTracksBox() {

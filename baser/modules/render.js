@@ -17,6 +17,8 @@ function renderTableItem(i) {
         let fileName = `${data[i].artist}-${data[i].title}-${data[i].date}`
         let item = document.createElement('div')
         item.className = 'table-item box'
+        item.setAttribute('tabindex', '1')
+        item.setAttribute('data-id', i)
         item.insertAdjacentHTML('beforeend', `
             <div class="left-cul">
                 <div class="cover-info">
@@ -34,6 +36,11 @@ function renderTableItem(i) {
                     <div class="i-date" title="${data[i].date}"><span>${data[i].date}</span></div>
                 </div>
                 <div class="track-list"></div>
+            </div>
+            <div class="options-btn pulsed">
+                <svg>
+                    <use xlink:href="#options">
+                </svg>
             </div>
         `)
         let trackItem = item.querySelector('.track-list')

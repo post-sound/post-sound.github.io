@@ -17,5 +17,9 @@ function getFile(path) {
 
 function parse(obj) {
     data = JSON.parse(obj)
-    render()
+    try {
+        render()
+    } catch (err) {
+        
+    }
 }

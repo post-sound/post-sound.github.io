@@ -99,12 +99,12 @@
 
 .i-title {
 /*    border-right: 1px solid rgba(87, 87, 87, 0.09);*/
-    width: calc(50% - 88px);
+    width: calc(50% - 104px);
 }
 
 .i-art {
 /*    border-right: 1px solid rgba(87, 87, 87, 0.09);*/
-    width: calc(50% - 93px);
+    width: calc(50% - 103px);
 }
 
 .i-type {
@@ -166,4 +166,90 @@
     padding: 0 15px;
     border-radius: 19px;
 /*    cursor: pointer;*/
+}
+
+.options-btn {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 9px;
+    top: 7px;
+/*    outline: 1px solid;*/
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.options-btn:hover {
+    background-color: #2c2c2c;
+}
+
+.options-btn:active {
+    background-color: #292929;
+}
+
+.options-btn svg {
+    width: 100%;
+    height: 100%;
+/*    fill: var(--active);*/
+    fill: #ffffff;
+    pointer-events: none;
+}
+
+.table-item:focus .options-btn svg {
+    fill: var(--active);
+}
+
+.context-menu {
+    display: none;
+    position: absolute;
+/*    top: 142px;*/
+/*    left: 189px;*/
+    z-index: 1;
+    background-color: #1c1c1c;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.context-menu ul {
+    list-style: none;
+/*    padding: 4px 10px;*/
+    padding: 0;
+    margin: 0;
+}
+
+.context-menu ul li {
+/*    outline: 1px solid;*/
+    padding: 0.5em 1.4em;
+    padding-left: 29px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.context-menu ul li:hover {
+    background-color: #212121;
+}
+
+.context-menu ul #edit {
+    color: var(--active);
+}
+
+.context-menu ul #edit svg {
+    fill: var(--active);
+}
+
+.context-menu ul #del {
+    color: #dd3b3b;
+}
+.context-menu ul #del svg {
+    fill: #dd3b3b;
+} 
+
+.context-menu svg {
+    width: 31px;
+    height: 19px;
+    fill: #fff;
+    position: absolute;
+    left: 0;
+    top: 5px;
 }
