@@ -78,6 +78,7 @@ function pushForm() {
             
             pushData.list[pushData.list.length] = {
                 index: pushData.list.length,
+                format: returnData[1],
                 title: title,
                 duration: returnData[0]
             }
@@ -110,7 +111,10 @@ function loadEnded() {
 function addTrack() {
     let isName = formData.trackNameInp == undefined || formData.trackNameInp == '' || formData.trackNameInp == '_NULL_'
     let isFile = formData.lastAudio == undefined || formData.lastAudio == '' || formData.lastAudio == '_NULL_'
-    if (isName || isFile) return
+    if (isName || isFile) {
+        console.log(123123)
+        return
+    }
     
     trackData[trackData.length] = {
         index: trackData.length,

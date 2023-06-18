@@ -5,6 +5,8 @@ const formBlock = document.querySelector('.main-form')
 const cancelArea = document.querySelector('.cancelArea')
 const expandArea = document.querySelector('.expandArea')
 const cancel = document.querySelector('.cancel')
+const contextMenuElem = document.querySelector('.context-menu')
+const contextDisabledArea = document.querySelector('.context-disabled')
 
 openFormBtn.addEventListener('click', expForm)
 cancelArea.addEventListener('click', clpForm)
@@ -94,9 +96,42 @@ function disabledOff() {
 }
 
 
+contextMenuElem.addEventListener('click', e => {
+    let ElemId = contextMenuElem.getAttribute('data-id')
+    let handlerType = e.target.id
+    
+    if (handlerType == 'edit') {
+        console.log(`${handlerType} ${ElemId} (Функция в разработке)`)
+        return
+    }
+    if (handlerType == 'del') {
+        if (confirm('Подтвердите удаление элемента...')) removeGlobalElement(ElemId)
+        return
+    }
+})
 
-
-
+function removeGlobalElement(id) {
+    let renderElement = document.querySelector(`.table-item[data-id="${id}"]`)
+    let dataElement = data[id]
+    
+    let coverFileName = `${dataElement.artist}-${dataElement.title}-${dataElement.date}.jpg`
+    eel.removeFile('./data/cover/1000/' + coverFileName)
+    eel.removeFile('./data/cover/350/' + coverFileName)
+    eel.removeFile('./data/cover/60/' + coverFileName)
+    
+    let i = 0
+    while (i < dataElement.list.length) {
+        let fileName = `${dataElement.artist}-${dataElement.list[i].title}-${dataElement.date}${dataElement.list[i].format}`
+        eel.removeFile('./data/audio/' + fileName)
+        i++
+    }
+    
+    data.splice(id, 1)
+    eel.jsonWriter(JSON.stringify(data, null, 2))
+    
+    renderElement.remove()
+    disabledContext()
+}
 
 
 
