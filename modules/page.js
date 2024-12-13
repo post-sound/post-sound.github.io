@@ -6,9 +6,9 @@ function render() {
 }
 
 function renderItems(type) {
+    page.innerHTML = '';
     data.forEach((item, i, arr) => {
         if (type == item.type) {
-            console.log(item.type)
             renderItem(item)
             return
         }
@@ -50,8 +50,6 @@ function pageSwith() {
     page.addEventListener("tabChange", e => {
         let type = e.value;
         
-        page.innerHTML = '';
-        
         switch(type) {
             case 'Все':
                 renderItems("all")
@@ -62,6 +60,8 @@ function pageSwith() {
             case 'Синглы':
                 renderItems("single")
                 break;
+            case '':
+                return;
         }
     })
 }
