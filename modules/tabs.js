@@ -4,6 +4,8 @@ let line = document.querySelector('.line');
 let tabWrap = document.querySelector('.tabWrap');
 let footBar = document.querySelector('.foot-bar ul');
 
+let tabEvent = new Event("tabChange", {bubbles: true});
+
 function tabSwither(elem, className, line) {
     if (line != undefined) {
         try {
@@ -18,6 +20,9 @@ function tabSwither(elem, className, line) {
 
     } 
     elem.addEventListener('click', function(e) {
+        tabEvent.value = e.target.firstChild.nodeValue;
+        page.dispatchEvent(tabEvent);
+        
         let vrk = e.target.tagName != 'LI' || e.target.classList.contains(className);
         if (vrk) return;
         

@@ -11,6 +11,9 @@ copyright by lotsmannc (2023)
 3. PIL -------- (pip install Pillow)
 4. pydub ------- (pip install pydub)
 
+Для python 3.13 и выше
+5. audioop-lts - (pip install audioop-lts)
+
 ------------------------------------
 
 Для корректной работы с аудиофайлами необходимо установить 

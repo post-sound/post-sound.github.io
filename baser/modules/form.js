@@ -140,7 +140,7 @@ function renderTracks() {
     elem.classList.add('tempTrackItem')
     elem.setAttribute('data-index', trackIndex)
     
-    elem.insertAdjacentHTML('beforeend', `
+    elem.insertAdjacentHTML('afterbegin', `
         <div class="temp-track-index">${trackIndex + 1}</div>
         <div class="temp-track-title">${trackData[trackIndex].title}</div>
         <div class="temp-track-file">${trackData[trackIndex].src}</div>
@@ -158,7 +158,7 @@ function renderTracks() {
     }
     
     trackItems[trackItems.length] = elem
-    tempTrackListBox.appendChild(elem)
+    tempTrackListBox.insertBefore(elem, tempTrackListBox.firstChild);
 }
 
 function removeTrack(trackIndex) {
