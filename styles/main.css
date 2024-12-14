@@ -793,12 +793,12 @@ body {
     }
     .line {
         width: 36px;
-        left: 12px;
+        left: 37px;
         bottom: 7px;
     }
     .tabWrap {
         position: fixed;
-        top: -96px;
+        top: -105px;
 /*        height: 105px;*/
         left: 0;
         border-radius: 0;
@@ -831,6 +831,7 @@ body {
         padding: 0.2em 17px;
         font-size: 15px;
 /*        outline: 1px solid;*/
+        height: 38px;
     }
     .header {
         display: none;
