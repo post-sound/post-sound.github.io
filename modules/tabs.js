@@ -34,7 +34,7 @@ function tabSwither(elem, className, line) {
             let offsX = e.target.offsetLeft,
                 offsW = e.target.offsetWidth;
             line.style.width = `${offsW - 24}px`;
-            line.style.left = `${offsX + 12}px`;
+            line.style.left = `${offsX + 14}px`;
         }
         lineMove(line);
         
