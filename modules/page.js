@@ -1,10 +1,15 @@
 getFile("./baser/data/albums.json");
 const page = document.querySelector('.page');
 
+//json onload render
 function render() {
     renderItems("all")
+    tabSwithHandler('release-type', v => {
+        renderItems(v)
+    })
 }
 
+//tabs change render
 function renderItems(type) {
     page.innerHTML = '';
     data.forEach((item, i, arr) => {
@@ -45,25 +50,3 @@ function renderItem(dataItem) {
             </div>
     `)
 }
-
-function pageSwith() {
-    page.addEventListener("tabChange", e => {
-        let type = e.value;
-        
-        switch(type) {
-            case 'Все':
-                renderItems("all")
-                break;
-            case 'Альбомы':
-                renderItems("album")
-                break;
-            case 'Синглы':
-                renderItems("single")
-                break;
-            case '':
-                return;
-        }
-    })
-}
-
-pageSwith()

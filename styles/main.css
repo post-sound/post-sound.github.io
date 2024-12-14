@@ -245,7 +245,7 @@ body {
 }
 
 .lib-ico svg use {
-    fill: var(--color);
+/*    fill: var(--color);*/
 }
 
 .lib-ico {
@@ -253,7 +253,8 @@ body {
 }
 
 .l-active svg use {
-    fill: #4983E4;
+/*    fill: #4983E4;*/
+    fill: #fff;
     transition: 0.1s all;
 }
 
@@ -264,7 +265,8 @@ body {
 .leftMenu ul li svg {
     width: 20px;
     height: 100%;
-    fill: var(--color);
+/*    fill: var(--color);*/
+    fill: #b9b9b9;
     transition: 0.1s all;
 /*    outline: 1px solid;*/
     pointer-events: none;
@@ -420,7 +422,7 @@ body {
 
 .active {
 /*    color: #fc6666;*/
-    color: #4983E4;
+/*    color: #4983E4;*/
     opacity: 1;
 }
 
@@ -441,7 +443,8 @@ body {
     width: 27px;
     height: 3px;
 /*    background-color: #ff5c5c;*/
-    background-color: #4983E4;
+/*    background-color: #4983E4;*/
+    background-color: #fff;
     position: absolute;
     bottom: 0;
 /*    left: 24px;*/
@@ -544,6 +547,10 @@ body {
     height: 98%;
 /*    outline: 1px solid;*/
     margin-left: 7px;
+    background-image: url(../newlogo.png);
+    background-size: 64%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .mlogoSVG svg {

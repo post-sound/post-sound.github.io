@@ -20,8 +20,10 @@ function tabSwither(elem, className, line) {
 
     } 
     elem.addEventListener('click', function(e) {
-        tabEvent.value = e.target.firstChild.nodeValue;
-        page.dispatchEvent(tabEvent);
+//        tabEvent.value = e.target.firstChild.nodeValue;
+        tabEvent.value = e;
+
+        document.dispatchEvent(tabEvent);
         
         let vrk = e.target.tagName != 'LI' || e.target.classList.contains(className);
         if (vrk) return;
@@ -73,6 +75,20 @@ function tabSwither(elem, className, line) {
     }
     
 
+}
+
+function tabSwithHandler(tabsName, collBack) {
+    document.addEventListener("tabChange", e => {
+        let btn = e.value.target;
+        let name = btn.parentElement.getAttribute('data-tabs-name');
+        if (name !== tabsName) return
+        
+        let value = btn.getAttribute('data-value');
+        if (value == undefined) return
+        if (value == '') return
+        
+        collBack(value)
+    })
 }
 
 //ul.addEventListener('click', move);
