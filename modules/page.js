@@ -22,6 +22,17 @@ function renderItems(type) {
             return
         }
     })
+    
+    data.forEach((item, i, arr) => {
+        if (type == item.type) {
+            renderItem(item)
+            return
+        }
+        if (type == 'all') {
+            renderItem(item)
+            return
+        }
+    })
 }
 
 function renderItem(dataItem) {
