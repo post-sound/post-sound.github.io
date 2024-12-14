@@ -764,7 +764,8 @@ body {
     pointer-events: none;
     width: 26px;
     height: 100%;
-    fill: var(--color);
+/*    fill: var(--color);*/
+    fill: #c1c1c1;
     
 }
 
@@ -773,7 +774,8 @@ body {
 }
 
 .f-active svg use {
-    fill: #4983E4;
+/*    fill: #4983E4;*/
+    fill: #fff;
 }
 
 /*testing*/
@@ -824,7 +826,7 @@ body {
     
     .tabs ul {
 /*        outline: 2px solid;*/
-        margin-left: 25px;
+/*        margin-left: 25px;*/
     }
     
     .tabs ul li {
@@ -837,13 +839,17 @@ body {
         display: none;
     }
     .fix {
-        display: block;
+        display: none;
     }
     .page {
 /*        justify-content: space-between;*/
         padding: 0;
-        margin-top: 53px;
+        margin-top: 44px;
         margin-bottom: 50px;
+        grid-gap: 0 13px;
+    }
+    .item-info {
+        margin-top: 7px;
     }
     .sort-btn {
         display: none;
