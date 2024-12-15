@@ -14,6 +14,7 @@ function tabSwither(elem, className, line) {
                 screen.orientation.addEventListener('change', resizes);
             }
             window.addEventListener('orientationchange', resizes);
+            resizes();
         } catch (err) {
             alert(err);
         }
@@ -69,7 +70,7 @@ function tabSwither(elem, className, line) {
             let offsX = el.offsetLeft,
                 offsW = el.offsetWidth;
             
-            line.style.width = `${offsW - 24}px`;
+            line.style.width = `${offsW - 22}px`;
             line.style.left = `${offsX + 12}px`;
         }
     }

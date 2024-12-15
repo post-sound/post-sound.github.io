@@ -457,8 +457,8 @@ body {
 /*        display: flex;*/
     }
     .line {
-        width: 36px;
-        left: 37px;
+        width: 0px;
+        left: 16px;
         bottom: 7px;
     }
     .tabWrap {
