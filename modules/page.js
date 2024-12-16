@@ -3,9 +3,10 @@ const page = document.querySelector('.page');
 
 //json onload render
 function render() {
+    createMethods()
     renderItems("all")
     tabSwithHandler('release-type', v => {
-        renderItems(v)
+        hideItems(v)
     })
 }
 
@@ -35,6 +36,29 @@ function renderItems(type) {
     })
 }
 
+function hideItems(type) {
+    let items = Array.from(page.children)
+    
+    items.forEach((item) => {
+        let itemId = item.getAttribute('data-id')
+        let itemObj = data.searchById(Number(itemId))
+        let itemType = itemObj.type
+        
+        if (type == 'all') {
+            item.style.display = 'block'
+            return
+        }
+        
+        if (itemType == type) {
+            item.style.display = 'block'
+        }
+        
+        if (itemType != type) {
+            item.style.display = 'none'
+        }
+    })
+}
+
 function renderItem(dataItem) {
     page.insertAdjacentHTML('beforeend', `
             <div class="page-item" data-id="${dataItem.id}">
@@ -60,4 +84,8 @@ function renderItem(dataItem) {
                 </div>
             </div>
     `)
+}
+
+function searchObjInArrByProp(prop) {
+    
 }

@@ -3,21 +3,23 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html[data-dark] {
+html[theme="light"] {
+    --box-bg-blured: rgba(255, 255, 255, 0.63);
+    --box-bg: var(--box-bg-blured);
+    --color: #000;
+    --page-bg: #ffffff;
+    --back-box: rgba(255, 255, 255, 0.47);
+    --grey: #434343;
+}
+
+html[theme="dark"] {
     --box-bg-blured: rgba(15, 15, 15, 0.84);
     --box-bg-classic: #17171c;
     --box-bg: var(--box-bg-blured);
     --color: #ffffff;
     --page-bg: #000;
     --back-box: rgba(29, 29, 29, 0.38);
-}
-
-html[data-light] {
-    --box-bg-blured: rgba(255, 255, 255, 0.69);
-    --box-bg: var(--box-bg-blured);
-    --color: #000;
-    --page-bg: #dedede;
-    --back-box: rgba(255, 255, 255, 0.47);
+    --grey: #7c7c7c;
 }
 
 .blur {
@@ -94,18 +96,18 @@ body {
 }
 
 .l-active svg use {
-    fill: #fff;
+    fill: var(--color);
     transition: 0.1s all;
 }
 
 .leftMenu ul li {
-    opacity: 0.8;
+/*    opacity: 0.8;*/
 }
 
 .leftMenu ul li svg {
     width: 20px;
     height: 100%;
-    fill: #b9b9b9;
+    fill: var(--grey);
     transition: 0.1s all;
     pointer-events: none;
 }
@@ -113,19 +115,31 @@ body {
 
 
 .logo {
-/*    outline: 1px solid;*/
     width: 50px;
     height: 53px;
-/*    background-image: url(../icons/favicon.svg);*/
-/*    background-image: url(../photo_2024-12-13_00-50-38.jpg);*/
+/*
     background-image: url(../newlogo.png);
     background-repeat: no-repeat;
     background-position: center;
-/*    background-size: 46px;*/
     background-size: 32px;
+*/
+/*    outline: 1px solid #fff;*/
     cursor: pointer;
     position: absolute;
     left: calc(50% - 25px);
+    display: flex;
+    justify-content: center;
+}
+
+.logo svg {
+    width: 31px;
+    height: 100%;
+    fill: var(--color);
+    transition: all .1s;
+}
+
+.logo:hover > svg {
+/*    fill: #381eff;*/
 }
 
 .rightMenu {
@@ -253,7 +267,7 @@ body {
 .line {
     width: 27px;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--color);
     position: absolute;
     bottom: 0;
     left: 12px;
@@ -368,7 +382,7 @@ body {
 
 .artist-item {
     font-size: 13px;
-    color: #a8a8a8;
+    color: var(--grey);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
