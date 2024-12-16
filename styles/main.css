@@ -412,6 +412,11 @@ body {
     transition: 0.1s bottom;
 }
 
+html[theme="light"] .foot-bar {
+    backdrop-filter: blur(52px) saturate(39%) brightness(222%) contrast(95%);
+    -webkit-backdrop-filter: blur(52px) saturate(39%) brightness(222%) contrast(95%);
+}
+
 .fb-wrap {
     height: 50px;
 }
@@ -442,8 +447,8 @@ body {
     width: 26px;
     height: 100%;
 /*    fill: var(--color);*/
-    fill: #c1c1c1;
-    
+    fill: var(--grey);
+/*    fill: #212121;*/
 }
 
 #f-user {
@@ -452,7 +457,7 @@ body {
 
 .f-active svg use {
 /*    fill: #4983E4;*/
-    fill: #fff;
+    fill: var(--color);
 }
 
 /*testing*/
@@ -492,6 +497,10 @@ body {
         -webkit-backdrop-filter: blur(32px) saturate(39%) brightness(43%) contrast(95%);
         display: flex;
         align-items: flex-end;
+    }
+    html[theme="light"] .tabWrap {
+        backdrop-filter: blur(52px) saturate(39%) brightness(222%) contrast(95%);
+        -webkit-backdrop-filter: blur(52px) saturate(39%) brightness(222%) contrast(95%);
     }
     .tabs {
 /*        outline: 1px solid;*/

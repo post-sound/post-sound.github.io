@@ -1,5 +1,7 @@
 const themeMedia = window.matchMedia('(prefers-color-scheme: light)');
 
+const html = document.querySelector('html')
+
 function swither(isLight) {
     if (isLight) {
         html.setAttribute('theme', 'light');
