@@ -5,9 +5,8 @@ const page = document.querySelector('.page');
 function render() {
     createMethods()
     renderItems("all")
-    tabSwithHandler('release-type', v => {
-        hideItems(v)
-    })
+    tabSwithHandler('release-type', hideItems)
+    tabSwithHandler('content', changeContent)
 }
 
 //tabs change render
@@ -86,6 +85,29 @@ function renderItem(dataItem) {
     `)
 }
 
-function searchObjInArrByProp(prop) {
+
+function changeContent(val) {
+    let contents = Array.from(document.querySelectorAll('[data-content]'))
     
+    contents.forEach(item => {
+        if (item.getAttribute('data-content') != val) {
+            item.style.display = 'none'
+        }
+        if (item.getAttribute('data-content') == val) {
+            item.style.display = 'flex'
+            loadContent(val, item)
+        }
+    })
+}
+
+function loadContent(val, contentBlock) {
+    if (val == 'arts') {
+        if (contentBlock.getAttribute('is-load')) return
+        autoCreateArtists().forEach(item => {
+            contentBlock.insertAdjacentHTML('beforeend',`
+                <p>${item.name}</p>
+            `)
+        })
+        contentBlock.setAttribute('is-load', true)
+    }
 }

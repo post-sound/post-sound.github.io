@@ -32,7 +32,7 @@ body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     color: var(--color);
-    min-width: 360px;
+/*    min-width: 320px;*/
     overflow-x: hidden;
 }
 
@@ -72,7 +72,7 @@ body {
 .leftMenu {
 /*    outline: 1px solid;*/
     height: 100%;
-    width: 124px;
+/*    width: 124px;*/
 /*    margin-left: -3px;*/
 }
 
@@ -84,6 +84,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    gap: 0 10px;
 }
 
 .leftMenu ul li {
@@ -93,6 +94,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+/*    outline: 1px solid;*/
 }
 
 .l-active svg use {
@@ -118,10 +120,10 @@ body {
     width: 50px;
     height: 53px;
 /*
-    background-image: url(../newlogo.png);
+    background-image: url(../materials/photo_2024-12-13_00-50-38.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 32px;
+    background-size: 53px;
 */
 /*    outline: 1px solid #fff;*/
     cursor: pointer;
@@ -172,7 +174,7 @@ body {
     padding: 18px 0;
     max-width: 1100px;
     margin: auto;
-    min-width: 350px;
+/*    min-width: 350px;*/
 }
 
 .content {
@@ -189,12 +191,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 41px;
+/*    outline: 1px solid;*/
 }
 
 
 .tabWrap {
-    margin-top: 44px;
-    width: calc(100.0% + 25px);
+/*    margin-top: 44px;*/
+    width: calc(100.0% + 22px);
     max-width: 1017px;
 /*    width: 100%;*/
     display: flex;
@@ -328,7 +332,9 @@ body {
     justify-content: center;
     align-items: center;
     transition: all .1s;
-    background-color: rgba(224, 224, 224, 0.03);
+/*    background-color: rgba(224, 224, 224, 0.06);*/
+    backdrop-filter: contrast(93%);
+    -webkit-backdrop-filter: contrast(95%);
 }
 
 .action-area:hover {
@@ -471,6 +477,7 @@ html[theme="light"] .foot-bar {
     .content {
         width: 100%;
         padding: 0px 12px;
+        margin-top: 0px;
     }
     .mHeader {
 /*        display: flex;*/
@@ -546,11 +553,14 @@ html[theme="light"] .foot-bar {
     .black-fix {
         display: none;
     }
+/*
     .test-block {
         width: calc(50% - 6px);
     }
+*/
 }
 
+/*
 @media (max-width: 553px) {
     .test-block {
         margin: 0 0px 13px 0px;
@@ -569,6 +579,7 @@ html[theme="light"] .foot-bar {
         margin: 0;
     }
 }
+*/
 
 @media (min-width: 1100px) {
     .tabWrap {

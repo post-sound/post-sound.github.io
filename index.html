@@ -213,18 +213,18 @@
             <div class="hContent">
                 <div class="hMenu">
                     <div class="leftMenu">
-                        <ul>
-                            <li class="home-ico l-active" style="opacity: 1;">
+                        <ul data-tabs-name="content">
+                            <li class="home-ico l-active" style="opacity: 1;" data-value="main">
                                 <svg>
                                     <use xlink:href="#home"></use>
                                 </svg>
                             </li>
-                            <li class="lib-ico">
+                            <li class="lib-ico" style="display: none">
                                 <svg>
                                     <use xlink:href="#lib"></use>
                                 </svg>
                             </li>
-                            <li class="arts-ico">
+                            <li class="arts-ico" data-value="arts">
                                 <svg>
                                     <use xlink:href="#arts"></use>
                                 </svg>
@@ -254,7 +254,7 @@
     </div>
     <div class="body">
         <div class="wrap">
-            <div class="content">
+            <div class="content" data-content="main">
                 <div class="tabWrap hideH">
                     <div class="tabs">
                        <div class="tabsFlex">
@@ -278,6 +278,7 @@
 
                 </div>
             </div>
+            <div class="content" data-content="arts" style="display: none"></div>
         </div>
         <div class="search-list"></div>
     </div>
@@ -291,12 +292,12 @@
                 </li>
                 <li>
                     <svg>
-                        <use xlink:href="#lib"></use>
+                        <use xlink:href="#arts"></use>
                     </svg>
                 </li>
                 <li>
                     <svg>
-                        <use xlink:href="#arts"></use>
+                        <use xlink:href="#search"></use>
                     </svg>
                 </li>
                 <li>

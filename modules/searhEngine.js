@@ -80,3 +80,24 @@ function neTochnoeSravnivanie(strToch, req) {
     let out = num / (req.length / 100)
     return out
 }
+
+function autoCreateArtists() {
+    let artists = [] // [{}, {}]
+    data.forEach((item, i) => {
+        let artIs = artists.find(artist => artist.name == item.artist) || 0
+        if (artIs == 0) {
+            let newArtist = {}
+            newArtist.name = item.artist
+            newArtist.id = i
+            newArtist.list = []
+            newArtist.list.push(item.id)
+            
+            artists.push(newArtist)
+        } else {
+            console.log(artIs)
+            artists[artIs.id].list.push(item.id)
+        }
+    })
+    
+    return artists
+}

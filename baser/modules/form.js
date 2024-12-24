@@ -307,5 +307,3 @@ function statusUpdate(status) {
 
 
 
-
-

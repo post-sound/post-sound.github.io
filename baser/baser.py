@@ -67,7 +67,12 @@ def removeFile(fileName):
 def jsonWriter(json):
     base = open('./data/albums.json', 'w', encoding='utf-16')
     base.write(json,)
-
+    
+@eel.expose
+def jsonGenerate(json, fileName):
+    jsonFile = open('./data/' + fileName, 'w', encoding='utf-16')
+    jsonFile.write(json,)
+    
 eel.start("view.html",  mode='default')
 
 
