@@ -19,7 +19,16 @@ function tabSwither(elem, className, line) {
             alert(err);
         }
 
-    } 
+    }
+    
+    let dataName = elem.getAttribute('data-tabs-name'),
+        allTabs
+    if (dataName) {
+        allTabs = document.querySelectorAll(`[data-tabs-name="${dataName}"]`)
+    } else {
+        allTabs = [elem]
+    }
+    
     elem.addEventListener('click', function(e) {
 //        tabEvent.value = e.target.firstChild.nodeValue;
         tabEvent.value = e;
@@ -39,16 +48,22 @@ function tabSwither(elem, className, line) {
         }
         lineMove(line);
         
-        let lis = elem.children;
         
-        let i = 0;
-        while (i < lis.length) {
-            lis[i].classList.remove(className);
-            lis[i].style.opacity = null;
-            i++
-        }
-        e.target.classList.add(className);
-        e.target.style.opacity = 1;
+        let tabValue = e.target.getAttribute('data-value')
+        console.log(tabValue)
+        allTabs.forEach(tabs => {
+            let lis = Array.from(tabs.querySelectorAll('[data-value]')),
+                liTarget = tabs.querySelector(`[data-value="${tabValue}"]`)
+            console.log(lis)
+            console.log(liTarget)
+
+            lis.forEach(li => {
+                li.classList.remove(className);
+                li.style.opacity = null;
+            })
+            liTarget.classList.add(className);
+            liTarget.style.opacity = 1;  
+        })
     })
     
     function resizes(e) {
@@ -115,7 +130,7 @@ function tabSwithHandler(tabsName, collBack) {
 
 window.addEventListener('load', event => {
     tabSwither(bar, 'l-active');
-    tabSwither(footBar, 'f-active');
+    tabSwither(footBar, 'l-active');
     tabSwither(ul, 'active', line);
 //    alert(navigator.userAgent);
 //    tabMove(ul, tabWrap, 'active');
