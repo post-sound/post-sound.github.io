@@ -207,6 +207,10 @@
         <symbol id="clear" viewBox="0 0 24 24">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM8.71486 9.75227C8.42838 9.4658 8.42838 9.00133 8.71486 8.71486C9.00133 8.42838 9.4658 8.42838 9.75227 8.71486L12 10.9626L14.2477 8.71486C14.5342 8.42838 14.9987 8.42838 15.2851 8.71486C15.5716 9.00133 15.5716 9.4658 15.2851 9.75227L13.0374 12L15.2851 14.2477C15.5716 14.5342 15.5716 14.9987 15.2851 15.2851C14.9987 15.5716 14.5342 15.5716 14.2477 15.2851L12 13.0374L9.75227 15.2851C9.4658 15.5716 9.00133 15.5716 8.71486 15.2851C8.42838 14.9987 8.42838 14.5342 8.71486 14.2477L10.9626 12L8.71486 9.75227Z"/>
         </symbol>
+        <symbol id="arrowRight" viewBox="0 0 6 11">
+            <path d="M5.88587 5.20047C6.03804 5.3659 6.03804 5.63411 5.88587 5.79954L1.48528 10.5834C0.9743 11.1389 0.894324 11.1389 0.383228 10.5833C-0.127743 10.0278 -0.127743 9.94086 0.383228 9.38538L3.95732 5.5L0.383236 1.61464C-0.127735 1.05916 -0.127735 0.972214 0.383361 0.416605C0.894331 -0.138868 0.974308 -0.138868 1.48529 0.416605L5.88587 5.20047Z">
+            </path>
+        </symbol>
     </svg>
     <div class="header un-select brul">
         <div class="hWrap">
@@ -235,6 +239,19 @@
                         <svg>
                             <use xlink:href="#logo"></use>
                         </svg>
+                    </div>
+                    <div class="temp-fix"></div>
+                    <div class="test-svg">
+                        <svg>
+                          <defs>
+                            <clipPath id="cut-off-bottom">
+                              <rect x="0" y="0" width="30" height="30" />
+                            </clipPath>
+                          </defs>
+
+                          <circle cx="15" cy="15" r="30" clip-path="url(#cut-off-bottom)" />
+                        </svg>
+
                     </div>
                     <div class="rightMenu">
                         <div class="searchBtn">
@@ -278,7 +295,21 @@
 
                 </div>
             </div>
-            <div class="content" data-content="arts" style="display: none"></div>
+            <div class="content" data-content="arts" style="display: none">
+<!--
+                <div class="art-item-block">
+                    <div class="art-name-block">
+                        <div class="art-name">
+                            <span>kalandra</span>
+                        </div>
+                    </div>
+                    <div class="art-rel-list-block">
+                        <div class="art-rel-list-line">
+                        </div>
+                    </div>
+                </div>
+-->
+            </div>
         </div>
         <div class="search-list"></div>
     </div>
@@ -309,6 +340,7 @@
         </div>
     </div>
     <span class="loader"></span>
+    <script src="modules/ui/widgets/widgets.js"></script>
     <script src="modules/themer.js"></script>
     <script src="baser/modules/reader.js"></script>
     <script src="modules/searhEngine.js"></script>

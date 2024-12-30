@@ -59,32 +59,8 @@ function hideItems(type) {
 }
 
 function renderItem(dataItem) {
-    page.insertAdjacentHTML('beforeend', `
-            <div class="page-item" data-id="${dataItem.id}">
-                <div class="cover-wrap">
-                    <div class="cover-block">
-                        <img src="./baser/data/cover/350/${dataItem.artist}-${dataItem.title}-${dataItem.date}.jpg" alt="">
-                    </div>
-                    <div class="action-area">
-                        <div class="item-play-btn">
-                        </div>
-                    </div>
-                </div>
-                <div class="item-info">
-                    <div class="title-item" title="${dataItem.title}">
-                        <span>${dataItem.title}</span>
-                    </div>
-                    <div class="artist-item" title="${dataItem.artist} • ${dataItem.type}">
-                        <span>${dataItem.artist}</span>
-                        <span style="text-decoration: none; cursor: default;">${
-                            " • " + dataItem.type
-                            }</span>
-                    </div>
-                </div>
-            </div>
-    `)
+    page.insertAdjacentHTML('afterBegin', widgets.card.rel.type1(dataItem))
 }
-
 
 function changeContent(val) {
     let contents = Array.from(document.querySelectorAll('[data-content]'))
@@ -103,10 +79,12 @@ function changeContent(val) {
 function loadContent(val, contentBlock) {
     if (val == 'arts') {
         if (contentBlock.getAttribute('is-load')) return
+        
         autoCreateArtists().forEach(item => {
-            contentBlock.insertAdjacentHTML('beforeend',`
-                <p>${item.name}</p>
-            `)
+            contentBlock.insertAdjacentHTML(
+                'afterBegin',
+                widgets.carusel.art.allRels(item)
+            )  
         })
         contentBlock.setAttribute('is-load', true)
     }

@@ -14,7 +14,7 @@ html[theme="light"] {
 
 html[theme="dark"] {
     --box-bg-blured: rgba(15, 15, 15, 0.84);
-    --box-bg-classic: #17171c;
+    --box-bg-classic: #0b0b0b;
     --box-bg: var(--box-bg-blured);
     --color: #ffffff;
     --page-bg: #000;
@@ -180,7 +180,7 @@ body {
 .content {
 /*    width: 90%;*/
     width: calc(90%);
-    min-width: 300px;
+/*    min-width: 300px;*/
 /*    height: 3380px;*/
 /*    outline: 1px solid;*/
     margin: auto;
@@ -198,8 +198,8 @@ body {
 
 .tabWrap {
 /*    margin-top: 44px;*/
-    width: calc(100.0% + 22px);
-    max-width: 1017px;
+    width: calc(100.0% + 26px);
+    max-width: 1013px;
 /*    width: 100%;*/
     display: flex;
     justify-content: space-between;
@@ -294,7 +294,7 @@ body {
     margin-top: 19px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(154px, 1fr));
     grid-gap: 24px;
 }
 
@@ -305,7 +305,7 @@ body {
 
 .cover-wrap {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     user-select: none;
     position: relative;
@@ -364,26 +364,32 @@ body {
 }
 
 .item-info {
-    margin-top: 11px;
+    margin-top: 9px;
     text-transform: capitalize;
-    padding: 0px 4px 0px 6px;
-}
-
-.item-info div span {
-    cursor: pointer;
-}
-
-.item-info div span:hover {
-    text-decoration: underline;
+    padding: 0px 0px 0px 0px;
+    font-weight: 500;
 }
 
 .title-item {
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 2px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.title-item:hover {
+    text-decoration: underline;
+}
+
+.artist-item-span {
+    cursor: pointer;
+}
+
+.artist-item-span:hover {
+    text-decoration: underline;
 }
 
 .artist-item {
@@ -394,6 +400,7 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
 
 .loader {
     opacity: 1;
@@ -466,7 +473,71 @@ html[theme="light"] .foot-bar {
     fill: var(--color);
 }
 
-/*testing*/
+
+
+
+
+
+.content[data-content="arts"] {
+/*    background-color: rgba(255, 0, 0, 0.04);*/
+/*    outline: 1px solid rgba(255, 255, 255, 0.03);*/
+/*    width: calc(90% + 15px);*/
+}
+
+.art-item-block {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.art-name-block {
+    width: 100%;
+    padding: 13px 0px;
+/*    outline: 1px solid;*/
+}
+
+.art-name span {
+    cursor: pointer;
+/*    color: var(--grey)*/
+    font-size: 18px;
+}
+
+.art-name span:hover {
+    text-decoration: underline;
+}
+
+.art-rel-list-block {
+    width: 100%;
+/*    outline: 1px solid rgba(255, 255, 255, 0.06);*/
+/*    margin-bottom: 29px;*/
+/*    overflow: hidden;*/
+/*    padding: 14px;*/
+/*    border-radius: 23px;*/
+/*    background-color: var(--box-bg-classic);*/
+    height: 239px;
+    overflow: hidden;
+}
+
+.art-rel-list-line {
+    display: flex;
+    justify-content: flex-start;
+    gap: 19px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 40px;
+}
+
+.art-rel-list-line .page-item {
+    width: 175px;
+    flex-shrink: 0;
+}
+
+.art-rel-list-line div[data-art-widgwt-name] {
+/*    display: none;*/
+}
+
+
+
+
 
 
 
