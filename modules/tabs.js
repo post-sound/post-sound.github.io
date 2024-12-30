@@ -50,12 +50,9 @@ function tabSwither(elem, className, line) {
         
         
         let tabValue = e.target.getAttribute('data-value')
-        console.log(tabValue)
         allTabs.forEach(tabs => {
             let lis = Array.from(tabs.querySelectorAll('[data-value]')),
                 liTarget = tabs.querySelector(`[data-value="${tabValue}"]`)
-            console.log(lis)
-            console.log(liTarget)
 
             lis.forEach(li => {
                 li.classList.remove(className);
