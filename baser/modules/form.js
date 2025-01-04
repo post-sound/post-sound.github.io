@@ -7,8 +7,13 @@ const addTrackBt = document.querySelector('.addTrackBt')
 const tempTrackListBox = document.querySelector('.tempTrackList')
 const pushFormBtn = document.querySelector('.push-form')
 
-const inputs = document.querySelectorAll('.textInp input')
+const inputsForClean = Array.from(document.querySelectorAll('.textInp input'))
+const inputs = [...inputsForClean,
+                ...Array.from(document.querySelectorAll('.swith-input input'))]
+
 const trackInp = document.querySelector('#trackNameInp')
+
+// Array.from(document.querySelectorAll('.swith-input'))
 
 let savedFiles = {images: [], audio: [], indexes: []}
 let formData = {}
@@ -34,6 +39,7 @@ addTrackBt.addEventListener('click', e => {
 })
 
 pushFormBtn.addEventListener('click', e => {
+    addTrack()
     if (!checkForm()) {
         alert('Не все поля заполнены или не добавлено не одной композиции')
         return
@@ -56,12 +62,16 @@ function pushForm() {
     
     savedFiles.indexes[savedFiles.indexes.length] = data.length - 1
     
-    let titleCover = `${formData.artInp}-${formData.titleAlbInp}-${formData.dateInp}`
-    eel.saveImage(formData.coverSrc, `${titleCover}.jpg`)(() => {
+    let titleCover = validation(`${formData.artInp}-${formData.titleAlbInp}-${formData.dateInp}.jpg`)
+    
+    eel.saveImage(formData.coverSrc, `${titleCover}`)(() => {
         let arrLength = savedFiles.images.length
-        savedFiles.images[arrLength] = `${titleCover}.jpg`
-        statusUpdate(`${titleCover}.jpg saved (1000, 350, 60)`)
+        savedFiles.images[arrLength] = `${titleCover}`
+        statusUpdate(`${titleCover} saved (1000, 350, 60)`)
     })
+    
+    
+    pushData.coverFileName = `${titleCover}`
     
     let i = 0
     while (i < trackData.length) {
@@ -70,7 +80,7 @@ function pushForm() {
             title = trackData[i].title
 //            loadEnd = new Event('loadEnd')
         
-        let titleAudio = `${formData.artInp}-${title}-${formData.dateInp}`
+        let titleAudio = validation(`${formData.artInp}-${title}-${formData.dateInp}`)
         eel.saveAudio(trackData[i].src, titleAudio)(returnData => {
             
             let arrLength = savedFiles.audio.length
@@ -80,7 +90,8 @@ function pushForm() {
                 index: pushData.list.length,
                 format: returnData[1],
                 title: title,
-                duration: returnData[0]
+                duration: returnData[0],
+                audioFileName: `${titleAudio + returnData[1]}`
             }
             statusUpdate(`${titleAudio + returnData[1]} saved   [${pushData.list.length} из ${trackData.length}]`)
             if (pushData.list.length === trackData.length) loadEnded()
@@ -89,6 +100,18 @@ function pushForm() {
     }
     
 
+}
+
+
+function validation(string) {
+    let outStr = []
+    Array.from(string).forEach((char, i, arr) => {
+        let IsValidChar = char == '\\' || char == '/' || char == ':' || char == '*' || char == '?' || char == '<' || char == '>' || char == '|'
+        if (!IsValidChar) {
+            outStr.push(char)
+        }
+    })
+    return outStr.join('')
 }
 
 function loadEnded() {
@@ -111,10 +134,7 @@ function loadEnded() {
 function addTrack() {
     let isName = formData.trackNameInp == undefined || formData.trackNameInp == '' || formData.trackNameInp == '_NULL_'
     let isFile = formData.lastAudio == undefined || formData.lastAudio == '' || formData.lastAudio == '_NULL_'
-    if (isName || isFile) {
-        console.log(123123)
-        return
-    }
+    if (isName || isFile) return
     
     trackData[trackData.length] = {
         index: trackData.length,
@@ -165,71 +185,63 @@ function removeTrack(trackIndex) {
     trackItems[trackIndex].remove()
     trackItems.splice(trackIndex, 1)
     trackData.splice(trackIndex, 1)
-    
-    let i = 0
-    while (i < trackData.length) {
+
+    trackData.forEach((item, i) => {
         trackData[i].index = i
         trackItems[i].setAttribute('data-index', i)
         trackItems[i].querySelector('.temp-track-index').innerHTML = i + 1
-        i++
-    }
+    })
 }
 
 function clearTracksBox() {
-    let i = 0
-    while (i < trackItems.length) {
-//        console.log(trackItems[i])
-        trackItems[i].remove()
-        i++
-    }
+    trackItems.forEach(trackItem => {
+        trackItem.remove()
+    })
 }
 
 
 
 function inputChanged() {
-    let i = 0
-    while (i < inputs.length) {
-        let input = inputs[i],
-            id = input.getAttribute('id')
+    inputs.forEach(input => {
+        let id = input.getAttribute('id')
+        
         input.addEventListener('input', e => {
             formData[id] = input.value
+            console.log(formData)
         })
-        addKeyEl(input, 'Enter', e => {
-            console.table(formData)
-        })
-        i++
-    }
+    })
 }
 inputChanged()
 
-function inputsClear() {
-    let i = 0,
-        event = new Event('input')
-    while (i < inputs.length) {
-        let input = inputs[i]
+function finalInputsChack() {
+    inputs.forEach(input => {
+        formData[id] = input.value
+    })
+}
+
+function inputsClear() {    
+    let event = new Event('input')
+    
+    inputsForClean.forEach(input => {
         input.value = ''
         input.dispatchEvent(event)
-        i++
-    }
+    })
 }
 
 
 function checkInps() {
-    let i = 0
-    while (i < Object.keys(formData).length) {
-        if (formData[Object.keys(formData)[i]] != '') return true
-        i++
-    }
+    Object.keys(formData).forEach(key => {
+        if (key != '') return true
+    })
+    
     return false
 }
 
 function checkForm() {
     if (Object.keys(formData).length != 8) return false
-    let i = 0
-    while (i < Object.keys(formData).length) {
-        if (formData[Object.keys(formData)[i]] == '') return false
-        i++
-    }
+    Object.keys(formData).forEach(key => {
+        if (key == '') return false
+    })
     return true
 }
 
@@ -274,19 +286,18 @@ function fileSelect(fileName) {
 
 
 function removeChange() {
-    let i = 0
-    while (i < savedFiles.images.length) {
-        eel.removeFile('./data/cover/1000/' + savedFiles.images[i])
-        eel.removeFile('./data/cover/350/' + savedFiles.images[i])
-        eel.removeFile('./data/cover/60/' + savedFiles.images[i])
-        i++
-    }
-    let e = 0
-    while (e < savedFiles.audio.length) {
-        eel.removeFile('./data/audio/' + savedFiles.audio[e])
-        e++
-    }
+    savedFiles.images.forEach(image => {
+        eel.removeFile('./data/cover/1000/' + image)
+        eel.removeFile('./data/cover/350/' + image)
+        eel.removeFile('./data/cover/60/' + image)
+    })
+
+    savedFiles.audio.forEach(audio => {
+        eel.removeFile('./data/audio/' + audio)
+    })
+    
     data.splice(savedFiles.indexes[0] + 1, savedFiles.indexes.length)
+    
     eel.jsonWriter(JSON.stringify(data, null, 2))(() => {
         console.log('%cИзменения текущего сеанса отменены', 'color: #1bdd1b')
         savedFiles = {images: [], audio: [], indexes: []}
@@ -301,9 +312,3 @@ function statusUpdate(status) {
     let date = new Date()
     console.log(`[${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] %c${status}`, 'color: #1bdd1b')
 }
-
-
-
-
-
-

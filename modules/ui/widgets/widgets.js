@@ -15,16 +15,6 @@ widgets.carusel.art.allRels = function(dataItem) {
         relWidgets.push(
             widgets.card.rel.type2(rel)
         )
-        relWidgets.push(
-            widgets.card.rel.type2(rel)
-        )
-        relWidgets.push(
-            widgets.card.rel.type2(rel)
-        )
-        relWidgets.push(
-            widgets.card.rel.type2(rel)
-        )
-
     })
 
     return `
@@ -56,7 +46,7 @@ widgets.card.rel.type1 = function(dataItem) {
             <div class="page-item" data-id="${dataItem.id}">
                 <div class="cover-wrap">
                     <div class="cover-block">
-                        <img src="./baser/data/cover/350/${dataItem.artist}-${dataItem.title}-${dataItem.date}.jpg" alt="">
+                        <img src="./baser/data/cover/350/${dataItem.coverFileName}" alt="${dataItem.coverFileName}">
                     </div>
                     <div class="action-area">
                         <div class="item-play-btn">
@@ -89,7 +79,7 @@ widgets.card.rel.type2 = function(dataItem) {
             <div class="page-item" data-id="${dataItem.id}">
                 <div class="cover-wrap">
                     <div class="cover-block">
-                        <img src="./baser/data/cover/350/${dataItem.artist}-${dataItem.title}-${dataItem.date}.jpg" alt="">
+                        <img src="./baser/data/cover/350/${dataItem.coverFileName}" alt="${dataItem.coverFileName}">
                     </div>
                     <div class="action-area">
                         <div class="item-play-btn">

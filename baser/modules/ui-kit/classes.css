@@ -169,13 +169,41 @@ a {
         100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
     }
 
+.swith-input {
+/*    outline: 1px solid;*/
+    background-color: #141414;
+    border-radius: 10px;
+    border: 0px solid;
+/*    padding: 0 8px;*/
+/*    outline: 7px solid #141414;*/
+}
 
+.swith-input ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 31px;
+    align-items: center;
+}
 
+.swith-input ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100%);
+    padding: 0 15px;
+/*    outline: 1px solid;*/
+    cursor: pointer;
+    color: #696969;
+    user-select: none;
+}
 
-
-
-
-
+.swith-input ul .active {
+    background-color: #2c2c2c;
+    color: #9f9f9f;
+    border-radius: 8px;
+}
 
 
 

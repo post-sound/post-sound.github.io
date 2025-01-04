@@ -70,3 +70,50 @@ function textInp(className) {
     })
 }
 textInp('textInp')
+
+Array.from(document.querySelectorAll('.swith-input')).forEach(sinput => {
+    let newTextInput = document.createElement('input')
+    newTextInput.style.display = 'none'
+    newTextInput.setAttribute('id', sinput.getAttribute('data-inp-id'))
+    
+    Array.from(sinput.querySelectorAll('li')).forEach((li, i, arr) => {
+        if (li.hasAttribute('data-default')) {
+            li.classList.add('active')
+            newTextInput.setAttribute('value', li.getAttribute('data-value'))
+//            li.setAttribute('tabindex', '1')
+        }
+        
+        li.addEventListener('click', e => liHandler(e, arr))
+//        addKeyEl(li, 'Enter', e => liHandler(e, arr))
+    })
+    
+    function liHandler(e, lis) {
+        lis.forEach(li => {
+            li.classList.remove('active')
+        })
+        
+        e.target.classList.add('active')
+//        e.target.setAttribute('tabindex', '1')
+        newTextInput.setAttribute('value', e.target.getAttribute('data-value'))
+        
+        
+        let newEvent = new Event('input')
+        newTextInput.dispatchEvent(newEvent)
+    }
+    
+    sinput.append(newTextInput)
+    
+    let newEvent = new Event('input')
+    window.onload = () => {
+        newTextInput.dispatchEvent(newEvent)
+    }
+})
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ function render() {
 
 function renderTableItem(i) {
     try {
-        let fileName = `${data[i].artist}-${data[i].title}-${data[i].date}`
+        let fileName = data[i].coverFileName
         let item = document.createElement('div')
         item.className = 'table-item box'
         item.setAttribute('tabindex', '1')
@@ -23,7 +23,7 @@ function renderTableItem(i) {
             <div class="left-cul">
                 <div class="cover-info">
                     <div class="image-c">
-                        <img src="data/cover/350/${fileName}.jpg" alt="${fileName}.jpg">
+                        <img src="data/cover/350/${fileName}" alt="${fileName}">
                     </div>
                 </div>
             </div>

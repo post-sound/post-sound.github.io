@@ -32,7 +32,7 @@ function clpForm() {
         return
     }
     disabledOn()
-    formBlock.style.bottom = '-550px'
+    formBlock.style.bottom = 'calc(-100vh + 130px)'
     cancelArea.style.display = 'none'
     expandArea.style.display = 'flex'
     expanded = false
@@ -41,6 +41,9 @@ function clpForm() {
 function expForm(e) {
     disabledOff()
     coverInp.focus()
+    
+    resizeTrackList()
+    
     formBlock.style.bottom = '-17px'
     cancelArea.style.display = 'block'
     expandArea.style.display = 'none'
@@ -51,13 +54,17 @@ function expForm(e) {
 function closeForm() {
     if (!clearForm(true)) return
     disabledOn()
-    formBlock.style.bottom = '-605px'
+    formBlock.style.bottom = 'calc(-100vh)'
     cancelArea.style.display = 'none'
     expanded = false
     closed = true
 }
 
+window.addEventListener('resize', resizeTrackList)
 
+function resizeTrackList() {
+    formBlock.querySelector('.tempTrackList').style.height = formBlock.clientHeight - 380 + 'px'
+}
 
 const tabElems = document.querySelectorAll('[tabindex]')
 function setEventEnter() {
@@ -113,18 +120,14 @@ contextMenuElem.addEventListener('click', e => {
 function removeGlobalElement(id) {
     let renderElement = document.querySelector(`.table-item[data-id="${id}"]`)
     let dataElement = data[id]
+
+    eel.removeFile('./data/cover/1000/' + dataElement.coverFileName)
+    eel.removeFile('./data/cover/350/' + dataElement.coverFileName)
+    eel.removeFile('./data/cover/60/' + dataElement.coverFileName)
     
-    let coverFileName = `${dataElement.artist}-${dataElement.title}-${dataElement.date}.jpg`
-    eel.removeFile('./data/cover/1000/' + coverFileName)
-    eel.removeFile('./data/cover/350/' + coverFileName)
-    eel.removeFile('./data/cover/60/' + coverFileName)
-    
-    let i = 0
-    while (i < dataElement.list.length) {
-        let fileName = `${dataElement.artist}-${dataElement.list[i].title}-${dataElement.date}${dataElement.list[i].format}`
-        eel.removeFile('./data/audio/' + fileName)
-        i++
-    }
+    dataElement.list.forEach(track => {
+        eel.removeFile('./data/audio/' + track.audioFileName)
+    })
     
     data.splice(id, 1)
     eel.jsonWriter(JSON.stringify(data, null, 2))

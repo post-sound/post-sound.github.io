@@ -129,11 +129,17 @@
                                 </div>
                             </div>
                             <div class="textInpBox">
-                                <div class="titleInp textInp" data-ph="Название альбома / сингла / EP..." data-inp-id="titleAlbInp"></div>
-                                <div class="artistInp textInp" data-ph="Исполнитель..." data-inp-id="artInp"></div>
+                                <div class="titleInp textInp" data-ph="Название" data-inp-id="titleAlbInp"></div>
+                                <div class="artistInp textInp" data-ph="Исполнитель" data-inp-id="artInp"></div>
                                 <div class="date-type">
-                                    <div class="dateInp textInp" data-ph="Год релиза..." data-inp-id="dateInp"></div>
-                                    <div class="typeInp textInp" data-ph="Тип (Album/EP/Single)..." data-inp-id="typeInp"></div>
+                                    <div class="dateInp textInp" data-ph="Год" data-inp-id="dateInp"></div>
+<!--                                    <div class="typeInp textInp" data-ph="Тип (Album/EP/Single)..." data-inp-id="typeInp"></div>-->
+                                    <div class="swith-input" data-inp-id="typeInp">
+                                        <ul>
+                                            <li data-value="album" data-default>Альбом</li>
+                                            <li data-value="single">Сингл</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -206,8 +212,8 @@
         <div class="cancelArea"></div>
     </div>
     <script src="../modules/searhEngine.js"></script>
-    <script src="modules/ui-kit/btn.js"></script>
     <script src="modules/hotKeys.js"></script>
+    <script src="modules/ui-kit/btn.js"></script>
     <script type="text/javascript" src="/eel.js"></script>
     <script src="modules/form.js"></script>
     <script src="modules/reader.js"></script>

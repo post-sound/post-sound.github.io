@@ -72,6 +72,7 @@ def jsonWriter(json):
 def jsonGenerate(json, fileName):
     jsonFile = open('./data/' + fileName, 'w', encoding='utf-16')
     jsonFile.write(json,)
+
     
 eel.start("view.html",  mode='default')
 

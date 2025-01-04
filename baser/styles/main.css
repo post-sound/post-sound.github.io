@@ -80,15 +80,18 @@ body {
     z-index: 99;
     left: calc(50% - 272px);
 /*    bottom: -17px;*/
-    bottom: -605px;
-    height: 600px;
+    bottom: -745px;
+    height: 91vh;
     padding: 20px;
     overflow: hidden;
     transition: bottom 0.3s;
+    display: flex;
+    flex-flow: column;
+    flex-shrink: 0;
 }
 
 .form-box {
-    height: 400px;
+/*    height: 452px;*/
     display: flex;
     flex-direction: column;
 }

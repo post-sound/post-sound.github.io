@@ -146,14 +146,15 @@
 
 .track-id {
 /*    outline: 1px solid;*/
-    width: 27px;
+/*    width: 27px;*/
     display: flex;
     justify-content: flex-end;
-    padding-right: 6px;
+/*    padding-right: 6px;*/
     color: var(--active);
     height: 100%;
     align-items: center;
 /*    background-color: #1f1f1f;*/
+    padding: 0px 6px 0px 10px;
 }
 
 .track-name {
