@@ -6,12 +6,12 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "icons/maskable_icon.png",
+      "src": "icons/icon.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "icons/maskable_icon.png",
+      "src": "icons/icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
