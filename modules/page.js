@@ -89,3 +89,27 @@ function loadContent(val, contentBlock) {
         contentBlock.setAttribute('is-load', true)
     }
 }
+
+page.addEventListener('click', e => {
+    let target = e.target.closest('.item-play-btn')
+    if (target == null) return;
+    let id = target.closest('[data-id]').getAttribute('data-id')
+//    console.log(id)
+    runPlayList(id, target)
+})
+
+let nowPlaying = 0
+let playidng = false
+let audio
+function runPlayList(id, target) {
+    if (audio != undefined) {
+        audio.pause()
+    }
+    let dataItem = data.searchById(id)
+    let playList = dataItem.list
+    let cover = dataItem.coverFileName
+    nowPlaying = id
+    audio = new Audio(`./baser/data/audio/${playList[0].audioFileName}`)
+    console.log(audio)
+    audio.play()
+}

@@ -4,6 +4,7 @@
   "start_url": "/index.html",
   "lang": "ru-RU",
   "display": "standalone",
+  "background_color": "#000",
   "icons": [
     {
       "src": "icons/icon.png",
